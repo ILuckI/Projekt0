@@ -1,6 +1,8 @@
 package com.project0.ProjektGrupowy.Entities;
 
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
+@Data
 public class Price {
     @Id
     @GeneratedValue
@@ -29,44 +32,4 @@ public class Price {
         this.returnDate = returnDate;
     }
 
-    //gety i sety
-
-
-    public Long getCarId() {
-        return carId;
-    }
-
-    public void setCarId(Long carId) {
-        this.carId = carId;
-    }
-
-    public Date getRentDate() {
-        return rentDate;
-    }
-
-    public void setRentDate(Date rentDate) {
-        this.rentDate = rentDate;
-    }
-
-    public Date getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(Date returnDate) {
-        this.returnDate = returnDate;
-    }
-
-    public Long getCarRentId() {
-        return carRentId;
-    }
-
-    @Override
-    public String toString() {
-        return "Price{" +
-                "carRentId=" + carRentId +
-                ", carId=" + carId +
-                ", rentDate=" + rentDate +
-                ", returnDate=" + returnDate +
-                '}';
-    }
 }
