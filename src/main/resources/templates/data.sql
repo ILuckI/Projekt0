@@ -15,7 +15,7 @@ values(7, 'Renault Clio', 1, 5, 2, 'Pb', '4.9l / 100', 1.2, '85 KM', '200 l', 'M
 insert into Car(carId, carName, carClassId, peopleNo, doorNo, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(8, 'BMW 318 GT', 3, 5, 4, 'ON', '5.5l / 100', 2.0, '143 KM', '350 l', 'Automat', 'Tak', 'obrazekBMW318GT');
 insert into Car(carId, carName, carClassId, peopleNo, doorNo, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
-values(9, 'Hyundai i30', 2, 5, 4, 'Pb', '6.6l / 100', 1.6, '120 KM', '300 l', 'Manual', 'Tak', 'obrazekHyundai130');
+values(9, 'Hyundai i30', 2, 5, 4, 'Pb', '6.6l / 100', 1.6, '120 KM', '300 l', 'Manual', 'Tak', 'obrazekHyundai30');
 
 insert into Price(priceId, carClassId, day3, day7, day7more, deposit) values (1, 3, 380, 340, 300, 3000);
 insert into Price(priceId, carClassId, day3, day7, day7more, deposit) values (2, 2, 300, 260, 220, 2000);
