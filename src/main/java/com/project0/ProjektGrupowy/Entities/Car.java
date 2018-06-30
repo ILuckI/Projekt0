@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+import com.project0.ProjektGrupowy.Entities.CarClass;
+=======
 package com.project0.ProjektGrupowy.Entities;
+>>>>>>> master
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "car")
@@ -11,6 +18,16 @@ public class Car {
     @Column(name = "carId", nullable = false)
     private Long carId;
 
+    @OneToMany(mappedBy = "car")
+    private List<CarClass> cc = new ArrayList<>();
+
+    public List<CarClass> getCc() {
+        return cc;
+    }
+
+    public void setCc(List<CarClass> cc) {
+        this.cc = cc;
+    }
 
     private String carName;
     @Column(name = "className", nullable = false)

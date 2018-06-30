@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class CarRent {
+public class CarClass {
     @Id
     @GeneratedValue
     @Column(name = "priceId", nullable = false)
@@ -24,9 +24,9 @@ public class CarRent {
     @Column(name = "deposit", nullable = false)
     private int deposit;
 
-    protected CarRent(){}
+    protected CarClass(){}
 
-    public CarRent(String className, int day3, int day7, int day7more, int deposit) {
+    public CarClass(String className, int day3, int day7, int day7more, int deposit) {
         this.className = className;
         this.day3 = day3;
         this.day7 = day7;
@@ -82,7 +82,7 @@ public class CarRent {
 
     @Override
     public String toString() {
-        return "CarRent{" +
+        return "CarClass{" +
                 "priceId=" + priceId +
                 ", className='" + className + '\'' +
                 ", day3=" + day3 +
