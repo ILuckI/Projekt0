@@ -1,10 +1,10 @@
-package com.devopsbuddy.web.controllers;
+package com.project0.ProjektGrupowy.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by tedonema on 03/03/2016.
+ * Created by Luck
  */
 @Controller
 public class IndexController {
