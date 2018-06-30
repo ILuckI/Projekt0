@@ -7,12 +7,93 @@
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
 
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Hello GROUP!</h1>
-            <p>Zaczynamy projekt :)</p>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="serch">
+
+            </div>
+
+        </div>
+        <div class="col-sm-8">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img th:src="@{/images/test1.jpg}" alt="Los Angeles">
+                        <div class="carousel-caption">
+                            <h3>Nowe modele </h3>
+                            <p>Nasze samochody sa niezawodne!</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img th:src="@{/images/test2.jpg}" alt="Los Angeles">
+                        <div class="carousel-caption">
+                            <h3>Najtaniej! </h3>
+                            <p>Napisz jezeli znajdziesz tanszy samochod!</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img th:src="@{/images/test3.jpg}" alt="Los Angeles">
+                        <div class="carousel-caption">
+                            <h3>Brak Limitow! </h3>
+                            <p>Nasze samochody nie maja limitow!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
         </div>
     </div>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="show">
+                <span class="glyphicon glyphicon-euro"></span>
+                <h3>MINIMUM FORMALNOSCI</h3>
+                <p>Skorzystaj z wygodnego i łatwego w użyciu formularza online, żeby zarezerwować wybrany model
+                    auta.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="show">
+                <span class="glyphicon glyphicon-heart"></span>
+                <h3>OBSŁUGA 24/7</h3>
+                <p>Jesteśmy dyspozycyjni non-stop, więc o każdej porze dnia i nocy możesz liczyć na nasze wsparcie.</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="show">
+                <span class="glyphicon glyphicon-ok"></span>
+                <h3>SZEROKI WYBÓR</h3>
+                <p>Wynajmujemy auta praktycznie na każdą okazję: podróże, wesela czy przeprowadzki.</p>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
 </div>
 
 <div th:replace="common/header :: before-body-scripts"/>
