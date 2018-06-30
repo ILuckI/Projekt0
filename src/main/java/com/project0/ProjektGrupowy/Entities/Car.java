@@ -1,3 +1,5 @@
+package com.project0.ProjektGrupowy.Entities;
+
 import javax.persistence.*;
 
 @Entity
