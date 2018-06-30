@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import com.project0.ProjektGrupowy.Entities.CarClass;
+=======
+package com.project0.ProjektGrupowy.Entities;
+>>>>>>> master
 
 import javax.persistence.*;
 
