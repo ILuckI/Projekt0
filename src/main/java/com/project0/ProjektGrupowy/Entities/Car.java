@@ -1,6 +1,11 @@
 package com.project0.ProjektGrupowy.Entities;
 
+<<<<<<< HEAD
 import lombok.Data;
+=======
+import com.project0.ProjektGrupowy.Entities.CarClass;
+
+>>>>>>> master
 
 import javax.persistence.*;
 
