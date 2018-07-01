@@ -6,6 +6,53 @@
 <body>
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
+    <div class="cennik">
+        <div class="row">
+            <h2>Klasa A</h2>
+            <div class="col-md-4">
+                <img th:src="@{/images/fiatpanda.png}" width="70%" alt="Los Angeles">
+            </div>
+            <div class="col-md-4">
+                <img th:src="@{/images/peugeot208.png}" width="70%" alt="Los Angeles">
+            </div>
+            <div class="col-md-4">
+                <img th:src="@{/images/renaultclio.png}" width="70%" alt="Los Angeles">
+            </div>
+
+        </div>
+        <br/>
+        <hr/>
+        <br/>
+        <div class="row">
+            <h2>Klasa B</h2>
+            <div class="col-md-4">
+                <img th:src="@{/images/hyundaii30.png}" width="70%" alt="Los Angeles">
+            </div>
+            <div class="col-md-4">
+                <img th:src="@{/images/toyotaauris.png}" width="70%" alt="Los Angeles">
+            </div>
+            <div class="col-md-4">
+                <img th:src="@{/images/seatleon.png}" width="70%" alt="Los Angeles">
+            </div>
+        </div>
+        <br/>
+        <hr/>
+        <br/>
+        <h2>Klasa C</h2>
+        <div class="col-md-4">
+            <img th:src="@{/images/bmw318.png}" width="70%" alt="Los Angeles">
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{/images/peugeot508.png}" width="70%" alt="Los Angeles">
+        </div>
+        <div class="col-md-4">
+            <img th:src="@{/images/toyotaavensis.png}" width="70%" alt="Los Angeles">
+        </div>
+
+    </div>
+    </div>
+
+
 </div>
 </body>
 <div th:replace="common/footer :: common-footer"/>

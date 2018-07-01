@@ -8,11 +8,21 @@
     <div th:replace="common/navbar :: common-navbar"/>
 
     <div class="row">
-        <div class="col-sm-4">
-        </div>
         <!--Rezultat wyszukiwania-->
-        <div class="col-sm-8">
-            <table>
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <tr>
+                    <th>Model</th>
+                    <th> Ilosc miejsc </th>
+                    <th> Ilosc drzwi </th>
+                    <th> Rodzaj paliwa </th>
+                    <th> Spalanie </th>
+                    <th> Pojemnosc silnika </th>
+                    <th> Moc silnika </th>
+                    <th> Pojemnosc bagaznika </th>
+                    <th> Skrzynia biegow </th>
+                    <th> Klimatyzacja </th>
+                </tr>
                 <tr th:each="car : ${cars}">
                     <td th:text="${car.carName}"></td>
                     <td th:text="${car.peopleNo}"></td>
@@ -28,7 +38,7 @@
             </table>
         </div>
     </div>
-
+    <br/>
 </div>
 
 
