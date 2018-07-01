@@ -23,14 +23,20 @@
                 <li><a th:text="#{navbar.reservation.text}" href="/rezerwacja"></a></li>
                 <li><a th:text="#{navbar.regulations.text}" href="/regulamin"></a></li>
                 <li><a th:text="#{navbar.contact.text}" href="/kontakt"></a></li>
+                <form class="navbar-form navbar-left" action="#" th:action="@{/findcar}" method="get">
+                    <div class="form-group">
+                        <input type="text" name="nameFragment" class="form-control" placeholder="Wyszukaj model" title="Find">
+                    </div>
+                    <button type="submit" value="Find" class="btn btn-default">Szukaj</button>
+                </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Coders Team
+                    <a class="dropdown-toggle" data-toggle="dropdown" th:text="#{navbar.coder.text}" href="#">
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="https://github.com/ILuckI">Lukasz Szubart</a></li>
-                        <li><a href="#">Marzena Obara</a></li>
+                        <li><a href="https://github.com/MaOb89">Marzena Obara</a></li>
                         <li><a href="https://github.com/wodzynskimateusz">Mateusz Wodzynski</a></li>
                         <li><a href="https://github.com/ILuckI/Projekt0/commits?author=tomeklukaszewski">Tomasz Lukaszewski</a></li>
                     </ul>

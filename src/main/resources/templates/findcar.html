@@ -9,18 +9,12 @@
 
     <div class="row">
         <div class="col-sm-4">
-            <div class="serch">
-                <!--forularz-->
-                <form action="#" th:action="@{/findcar}" method="get">
-                <p>Find product: <input type="text" name="nameFragment" title="Find"/></p>
-                <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
-            </form>
+        </div>
+        <!--Rezultat wyszukiwania-->
         <div class="col-sm-8">
-
             <table>
                 <tr th:each="car : ${cars}">
                     <td th:text="${car.carName}"></td>
-                    <td th:text="${car.className}"></td>
                     <td th:text="${car.peopleNo}"></td>
                     <td th:text="${car.doorNo}"></td>
                     <td th:text="${car.fuel}"></td>
@@ -32,7 +26,6 @@
                     <td th:text="${car.aircondition}"></td>
                 </tr>
             </table>
-
         </div>
     </div>
 
