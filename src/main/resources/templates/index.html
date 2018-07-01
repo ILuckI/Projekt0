@@ -10,49 +10,55 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="serch">
-                <form method="post">
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="carClass">
-                            Klasa
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <select class="select form-control" id="carClass" name="carClass">
-                            <option value="Klasa a (np. Fiat Panda)">
-                                Klasa a (np. Fiat Panda)
-                            </option>
-                            <option value="Klasa a (np. Peugeot 508)">
-                                Klasa a (np. Peugeot 508)
-                            </option>
-                            <option value="Klasa a (np. BMW GT)">
-                                Klasa a (np. BMW GT)
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="date">
-                            Data wydania
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"
-                               type="date"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="date1">
-                            Data zwrotu
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
-                               type="date"/>
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                        <div>
-                            <button class="btn btn-success " name="submit" type="submit">
-                                Szukaj
-                            </button>
-                        </div>
-                    </div>
+                <!--forularz-->
+                <form action="#" th:action="@{/findcar}" method="get">
+                    <p>Find product: <input type="text" name="nameFragment" title="Find"/></p>
+                    <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
                 </form>
+
+                <!--<form action="#" th:action="@{/pages/findcar}" method="get">-->
+                    <!--<div class="form-group ">-->
+                        <!--<label class="control-label requiredField" for="carClass">-->
+                            <!--Klasa-->
+                            <!--<span class="asteriskField">*</span>-->
+                        <!--</label>-->
+                        <!--<select class="select form-control" id="carClass" name="carClass">-->
+                            <!--<option value="Klasa a (np. Fiat Panda)">-->
+                                <!--Klasa a (np. Fiat Panda)-->
+                            <!--</option>-->
+                            <!--<option value="Klasa a (np. Peugeot 508)">-->
+                                <!--Klasa a (np. Peugeot 508)-->
+                            <!--</option>-->
+                            <!--<option value="Klasa a (np. BMW GT)">-->
+                                <!--Klasa a (np. BMW GT)-->
+                            <!--</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="form-group ">-->
+                        <!--<label class="control-label requiredField" for="date">-->
+                            <!--Data wydania-->
+                            <!--<span class="asteriskField">*</span>-->
+                        <!--</label>-->
+                        <!--<input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"-->
+                               <!--type="date"/>-->
+                    <!--</div>-->
+                    <!--<div class="form-group ">-->
+                        <!--<label class="control-label requiredField" for="date1">-->
+                            <!--Data zwrotu-->
+                            <!--<span class="asteriskField">*</span>-->
+                        <!--</label>-->
+                        <!--<input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"-->
+                               <!--type="date"/>-->
+                    <!--</div>-->
+                    <!--<hr>-->
+                    <!--<div class="form-group">-->
+                        <!--<div>-->
+                            <!--<button class="btn btn-success " name="submit" type="submit">-->
+                                <!--Szukaj-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
             </div>
 
         </div>

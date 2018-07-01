@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div class="container">
+    <div th:replace="common/navbar :: common-navbar"/>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="serch">
+                <!--forularz-->
+                <form action="#" th:action="@{/findcar}" method="get">
+                <p>Find product: <input type="text" name="nameFragment" title="Find"/></p>
+                <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
+            </form>
+        <div class="col-sm-8">
+
+            <table>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.carName}"></td>
+                    <td th:text="${car.className}"></td>
+                    <td th:text="${car.peopleNo}"></td>
+                    <td th:text="${car.doorNo}"></td>
+                    <td th:text="${car.fuel}"></td>
+                    <td th:text="${car.consumption}"></td>
+                    <td th:text="${car.capacity}"></td>
+                    <td th:text="${car.power}"></td>
+                    <td th:text="${car.luggage}"></td>
+                    <td th:text="${car.gearbox}"></td>
+                    <td th:text="${car.aircondition}"></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div th:replace="common/footer :: common-footer"/>
+<div th:replace="common/header :: before-body-scripts"/>
+</body>
+</html>
