@@ -17,6 +17,7 @@ public class Price {
 
     @Column(name = "carClassId", nullable = false)
     private Long carClassId;
+    
 
     @Column(name = "carClassName", nullable = false)
     private String className;

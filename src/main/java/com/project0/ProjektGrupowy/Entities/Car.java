@@ -34,7 +34,7 @@ public class Car  {
     private String gearbox;
     @Column(name = "aircondition", nullable = false)
     private String aircondition;
-    @Column(name = "picture ", nullable = false)
+    @Column(name = "picture_", nullable = false)
     private String picture;
 
     protected Car(){}

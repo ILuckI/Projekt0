@@ -24,6 +24,7 @@ public class CarRent {
     @Column(name = "returnDate", nullable = false)
     private Date returnDate;
 
+
     protected CarRent(){}
 
     public CarRent(Long carId, Date rentDate, Date returnDate) {
