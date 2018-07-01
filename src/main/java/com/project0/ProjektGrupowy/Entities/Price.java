@@ -1,35 +1,43 @@
 package com.project0.ProjektGrupowy.Entities;
 
-
 import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 @Data
 public class Price {
     @Id
     @GeneratedValue
-    @Column(name = "carRentId", nullable = false)
-    private Long carRentId;
+    @Column(name = "priceId", nullable = false)
+    private Long priceId;
 
-    @Column(name = "carId", nullable = false)
-    private Long carId;
-    @Column(name = "rentDate", nullable = false)
-    private Date rentDate;
-    @Column(name = "returnDate", nullable = false)
-    private Date returnDate;
+    @Column(name = "carClassId", nullable = false)
+    private Long carClassId;
+
+    @Column(name = "carClassName", nullable = false)
+    private String className;
+    @Column(name = "day3", nullable = false)
+    private int day3;
+    @Column(name = "day7", nullable = false)
+    private int day7;
+    @Column(name = "day7more", nullable = false)
+    private int day7more;
+    @Column(name = "deposit", nullable = false)
+    private int deposit;
 
     protected Price(){}
 
-    public Price(Long carId, Date rentDate, Date returnDate) {
-        this.carId = carId;
-        this.rentDate = rentDate;
-        this.returnDate = returnDate;
+    public Price(String className, int day3, int day7, int day7more, int deposit) {
+        this.className = className;
+        this.day3 = day3;
+        this.day7 = day7;
+        this.day7more = day7more;
+        this.deposit = deposit;
     }
+
 
 }
