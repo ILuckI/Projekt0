@@ -3,9 +3,9 @@ insert into car_Class (car_Class_Id, car_Class_Name) values (2, 'Klasa kompaktow
 insert into car_Class (car_Class_Id, car_Class_Name) values (3, 'Klasa luksusowa');
 
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
-values(1, 'Seat Leon', 3, 5, 4, 'Pb', '6.8l / 100', 1.4, '125 KM', '350 l', 'Manual', 'Tak', 'obrazekSeatLeon');
+values(1, 'Seat Leon', 2, 5, 4, 'Pb', '6.8l / 100', 1.4, '125 KM', '350 l', 'Manual', 'Tak', 'obrazekSeatLeon');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
-values(2, 'Toyota Avensis', 2, 5, 4, 'Pb', '6.8l / 100', 1.8, '152 KM', '280 l', 'Manual', 'Tak', 'obrazekToyotaAvensis');
+values(2, 'Toyota Avensis', 3, 5, 4, 'Pb', '6.8l / 100', 1.8, '152 KM', '280 l', 'Manual', 'Tak', 'obrazekToyotaAvensis');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(3, 'Peugeot 508', 3, 5, 4, 'ON', '6.5l / 100', 2.0, '163 KM', '380 l', 'Automat', 'Tak', 'obrazekPeugeot508');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
