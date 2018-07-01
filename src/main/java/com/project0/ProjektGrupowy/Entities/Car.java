@@ -10,15 +10,15 @@ import javax.persistence.*;
 public class Car  {
     @Id
     @GeneratedValue
-    @Column(name = "carId", nullable = false)
+    @Column(name = "car_Id", nullable = false)
     private Long carId;
-    
+    @Column(name = "car_Name", nullable = false)
     private String carName;
-    @Column(name = "className", nullable = false)
-    private String className;
-    @Column(name = "peopleNo", nullable = false)
+    @Column(name = "car_Class_Id", nullable = false)
+    private String carClassId;
+    @Column(name = "people_No", nullable = false)
     private int peopleNo;
-    @Column(name = "doorNo", nullable = false)
+    @Column(name = "door_No", nullable = false)
     private int doorNo;
     @Column(name = "fuel", nullable = false)
     private String fuel;
@@ -34,7 +34,7 @@ public class Car  {
     private String gearbox;
     @Column(name = "aircondition", nullable = false)
     private String aircondition;
-    @Column(name = "picture_", nullable = false)
+    @Column(name = "picture", nullable = false)
     private String picture;
 
     protected Car(){}

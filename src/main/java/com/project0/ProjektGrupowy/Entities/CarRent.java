@@ -3,25 +3,23 @@ package com.project0.ProjektGrupowy.Entities;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "car_Rent")
 @Data
 public class CarRent {
     @Id
     @GeneratedValue
-    @Column(name = "carRentId", nullable = false)
+    @Column(name = "car_Rent_Id", nullable = false)
     private Long carRentId;
 
-    @Column(name = "carId", nullable = false)
+    @Column(name = "car_Id", nullable = false)
     private Long carId;
-    @Column(name = "rentDate", nullable = false)
+    @Column(name = "rent_Date", nullable = false)
     private Date rentDate;
-    @Column(name = "returnDate", nullable = false)
+    @Column(name = "return_Date", nullable = false)
     private Date returnDate;
 
 

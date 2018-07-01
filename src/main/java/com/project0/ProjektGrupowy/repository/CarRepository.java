@@ -1,6 +1,6 @@
 package com.project0.ProjektGrupowy.repository;
 
-import com.project0.ProjektGrupowy.entities.Car;
+import com.project0.ProjektGrupowy.Entities.Car;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

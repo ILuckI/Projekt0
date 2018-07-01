@@ -12,15 +12,11 @@ import javax.persistence.Id;
 public class Price {
     @Id
     @GeneratedValue
-    @Column(name = "priceId", nullable = false)
+    @Column(name = "price_Id", nullable = false)
     private Long priceId;
 
-    @Column(name = "carClassId", nullable = false)
+    @Column(name = "car_Class_Id", nullable = false)
     private Long carClassId;
-    
-
-    @Column(name = "carClassName", nullable = false)
-    private String className;
     @Column(name = "day3", nullable = false)
     private int day3;
     @Column(name = "day7", nullable = false)
@@ -32,13 +28,11 @@ public class Price {
 
     protected Price(){}
 
-    public Price(String className, int day3, int day7, int day7more, int deposit) {
-        this.className = className;
+    public Price(Long carClassId, int day3, int day7, int day7more, int deposit) {
+        this.carClassId = carClassId;
         this.day3 = day3;
         this.day7 = day7;
         this.day7more = day7more;
         this.deposit = deposit;
     }
-
-
 }
