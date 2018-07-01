@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<footer th:fragment="common-footer">
+    <div class="row">
+        <div class="col-sm-12 footer-css">
+            <a th:text="#{navbar.fleet.text}" href="/flota"></a>
+            <a th:text="#{navbar.pricelist.text}" href="/cennik"></a>
+            <a th:text="#{navbar.reservation.text}" href="/rezerwacja"></a>
+            <a th:text="#{navbar.regulations.text}" href="/regulamin"></a>
+            <a th:text="#{navbar.contact.text}" href="/kontakt"></a>
+        </div>
+    </div>
+</footer>
+
+</html>

@@ -10,7 +10,49 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="serch">
-
+                <form method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="carClass">
+                            Klasa
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <select class="select form-control" id="carClass" name="carClass">
+                            <option value="Klasa a (np. Fiat Panda)">
+                                Klasa a (np. Fiat Panda)
+                            </option>
+                            <option value="Klasa a (np. Peugeot 508)">
+                                Klasa a (np. Peugeot 508)
+                            </option>
+                            <option value="Klasa a (np. BMW GT)">
+                                Klasa a (np. BMW GT)
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="date">
+                            Data wydania
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"
+                               type="date"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="date1">
+                            Data zwrotu
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
+                               type="date"/>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-success " name="submit" type="submit">
+                                Szukaj
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
         </div>
@@ -94,8 +136,11 @@
     <br/>
     <hr/>
     <br/>
+
 </div>
 
+
+<div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>
 </body>
 </html>

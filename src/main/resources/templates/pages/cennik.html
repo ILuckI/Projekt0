@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div class="container">
+    <div th:replace="common/navbar :: common-navbar"/>
+    <div class="cennik">
+        <div class="row">
+            <h1>Klasa A</h1>
+            <div class="col-sm-4">
+                <img th:src="@{/images/fiatpanda.png}" alt="Los Angeles">
+            </div>
+            <div class="col-sm-4">
+                <img th:src="@{/images/peugeot208.png}" alt="Los Angeles">
+            </div>
+            <div class="col-sm-4">
+                <img th:src="@{/images/renaultclio.png}" alt="Los Angeles">
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

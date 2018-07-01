@@ -1,11 +1,73 @@
-body{
+body {
     margin-top: 5%;
-    background-color: silver;
+    background-color: #ffffff;
 }
-.serch{
+
+.serch {
     background-color: white;
     padding: 2%;
 }
-.show{
+
+.show {
     text-align: center;
+}
+
+.show h3 {
+    color: #0b173e;
+}
+
+hr {
+    color: black;
+}
+
+.container .form-class {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container h3 {
+    text-align: center;
+}
+
+/*Footer*/
+footer {
+    padding: 3%;
+    text-align: center;
+    background-color: black;
+}
+
+.footer-css a {
+    text-decoration: none;
+    color: silver;
+    padding: 5%;
+}
+
+/* unvisited link */
+.footer-css a:link {
+    color: silver;
+}
+
+/* visited link */
+.footer-css a:visited {
+    color: teal;
+}
+
+/* mouse over link */
+.footer-css a:hover {
+    color: lightsteelblue;
+}
+
+/* selected link */
+.footer-css a:active {
+    color: blue;
+}
+
+/*Klasa page*/
+.cennik h3 {
+    text-align: center;
+}
+
+.cennik img {
+    padding: 5%;
 }
