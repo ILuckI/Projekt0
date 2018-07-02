@@ -26,23 +26,26 @@
                 <li><a th:text="#{navbar.contact.text}" href="/kontakt"></a></li>
                 <form class="navbar-form navbar-left" action="#" th:action="@{/findcar}" method="get">
                     <div class="form-group">
-                        <input type="text" name="nameFragment" class="form-control" placeholder="Wyszukaj model" title="Find">
+                        <input type="text" name="nameFragment" class="form-control" placeholder="Wyszukaj model"
+                               title="Find">
                     </div>
                     <button type="submit" value="Find" class="btn btn-default">Szukaj</button>
                 </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" th:text="#{navbar.coder.text}" href="#">
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a th:text="#{navbar.coders1.text}" href="https://github.com/ILuckI"></a></li>
-                        <li><a th:text="#{navbar.coders2.text}" href="https://github.com/MaOb89"></a></li>
-                        <li><a th:text="#{navbar.coders3.text}" href="https://github.com/wodzynskimateusz"></a></li>
-                        <li><a th:text="#{navbar.coders4.text}" href="https://github.com/ILuckI/Projekt0/commits?author=tomeklukaszewski"></a></li>
-                    </ul>
-                </li>
+                <li><a th:text="#{navbar.coder.text}" href="/coders"></a></li>
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" th:text="#{navbar.coder.text}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                        <!--<li><a href="https://github.com/ILuckI">Lukasz Szubart</a></li>-->
+                        <!--<li><a href="https://github.com/MaOb89">Marzena Obara</a></li>-->
+                        <!--<li><a href="https://github.com/wodzynskimateusz">Mateusz Wodzynski</a></li>-->
+                        <!--<li><a href="https://github.com/tomeklukaszewski">Tomasz Lukaszewski</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
             </ul>
+
         </div>
     </div>
 </div>

@@ -6,10 +6,40 @@
 <body>
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
-    <section>
-        <img th:src="@{/images/bg-kontakt.png}" width="100%" alt="Los Angeles">
-        <br/>
-    </section>
+    <div class="row">
+        <div class="col-sm-6">
+            <img th:src="@{/images/bg-kontakt.png}" width="100%" alt="Los Angeles">
+            <br/>
+            <div class="contact">
+                <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="gallery-title">CAR RENT 71</h1>
+                    <hr>
+                    <p>
+                        tel: +48 666 106 106
+                        <br/>
+                        email: car.rent71@car.com
+                        <br/>
+                    <div id="footer-social">
+                        <hr>
+                        <ul class="footer-social-icon ">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32838.86197574544!2d2.6524423837708424!3d39.55518496770163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12979259c61ac757%3A0xc40d5406c3d058c6!2sPalma%2C+Baleary%2C+Hiszpania!5e0!3m2!1spl!2spl!4v1530533730691"
+                        width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 </body>
