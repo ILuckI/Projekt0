@@ -1,59 +1,66 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<!--Created by Luck-->
 <head th:replace="common/header :: common-header"/>
 
 <body>
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
-    <div class="cennik">
+    <div class="container">
         <div class="row">
-            <h2>Klasa A</h2>
-            <div class="col-md-4">
-                <img th:src="@{/images/fiatpanda.png}" width="70%" alt="Los Angeles">
+            <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="gallery-title">N A S Z A || F L O T A</h1>
             </div>
-            <div class="col-md-4">
-                <img th:src="@{/images/peugeot208.png}" width="70%" alt="Los Angeles">
+
+            <div align="center">
+                <button class="btn btn-default filter-button" data-filter="all">Wszystko</button>
+                <button class="btn btn-default filter-button" data-filter="a">Miejski</button>
+                <button class="btn btn-default filter-button" data-filter="b">Kompakt</button>
+                <button class="btn btn-default filter-button" data-filter="c">Luksusowa</button>
+                <button class="btn btn-default filter-button" data-filter="diesel">Diesel</button>
+                <button class="btn btn-default filter-button" data-filter="manual">Manual</button>
             </div>
-            <div class="col-md-4">
-                <img th:src="@{/images/renaultclio.png}" width="70%" alt="Los Angeles">
+            <br/>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter a manual">
+                <img th:src="@{/images/fiatpanda.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter a manual diesel">
+                <img th:src="@{/images/peugeot208.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter a manual">
+                <img th:src="@{/images/renaultclio.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter b manual">
+                <img th:src="@{/images/hyundaii30.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter b manual">
+                <img th:src="@{/images/toyotaauris.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter b manual">
+                <img th:src="@{/images/seatleon.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter c diesel">
+                <img th:src="@{/images/bmw318.png}" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter c diesel">
+                <img th:src="@{/images/peugeot508.png}" class="img-responsive">
+            </div>
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter c manual">
+                <img th:src="@{/images/toyotaavensis.png}" class="img-responsive">
             </div>
 
         </div>
-        <br/>
-        <hr/>
-        <br/>
-        <div class="row">
-            <h2>Klasa B</h2>
-            <div class="col-md-4">
-                <img th:src="@{/images/hyundaii30.png}" width="70%" alt="Los Angeles">
-            </div>
-            <div class="col-md-4">
-                <img th:src="@{/images/toyotaauris.png}" width="70%" alt="Los Angeles">
-            </div>
-            <div class="col-md-4">
-                <img th:src="@{/images/seatleon.png}" width="70%" alt="Los Angeles">
-            </div>
-        </div>
-        <br/>
-        <hr/>
-        <br/>
-        <h2>Klasa C</h2>
-        <div class="col-md-4">
-            <img th:src="@{/images/bmw318.png}" width="70%" alt="Los Angeles">
-        </div>
-        <div class="col-md-4">
-            <img th:src="@{/images/peugeot508.png}" width="70%" alt="Los Angeles">
-        </div>
-        <div class="col-md-4">
-            <img th:src="@{/images/toyotaavensis.png}" width="70%" alt="Los Angeles">
-        </div>
-
     </div>
-    </div>
-
-
 </div>
+
 </body>
 <div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>

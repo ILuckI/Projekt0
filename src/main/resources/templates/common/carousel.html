@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="carousel" th:fragment="common-carousel">
+    <div class="main-slider">
+        <div class="t-slide current-t-slide">
+            <img th:src="@{/images/test1.jpg}" alt=""/>
+        </div>
+        <div class="t-slide">
+            <img th:src="@{/images/test2.jpg}" alt=""/>
+        </div>
+        <div class="t-slide">
+            <img th:src="@{/images/test3.jpg}" alt=""/>
+        </div>
+        <div class="t-slide">
+            <img th:src="@{/images/test2.jpg}" alt=""/>
+        </div>
+        <div class="t-slide">
+            <img th:src="@{/images/test3.jpg}" alt=""/>
+        </div>
+
+        <div class="t-slider-controls">
+            <div class="arrow right-arrow">
+                <div class="arrow-container">
+                    <div class="arrow-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="arrow left-arrow">
+                <div class="arrow-container">
+                    <div class="arrow-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="t-load-bar">
+                <div class="inner-load-bar"></div>
+            </div>
+            <div class="t-dots-container">
+                <div class="t-slide-dots-wrap">
+                    <div class="t-slide-dots">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
