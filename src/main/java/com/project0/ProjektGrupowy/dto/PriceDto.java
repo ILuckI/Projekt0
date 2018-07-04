@@ -1,5 +1,8 @@
 package com.project0.ProjektGrupowy.dto;
 
+import lombok.Data;
+
+@Data
 public class PriceDto {
 
     private Long carClassId;

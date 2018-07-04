@@ -10,24 +10,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created by Luck
- */
 @Controller
 public class CennikController {
 
     @Autowired
     private PriceService priceService;
 
-    @RequestMapping("/cennik")
-    public String home() {
-        return "pages/cennik";
+    @RequestMapping ("/cennik")
+    public ModelAndView findPrice() {
+        List<PriceDto> allPrices = priceService.getAllPrices();
+        return new ModelAndView("pages/cennik", "prices", allPrices);
     }
-
-//    @GetMapping("/cennik")
-//    public ModelAndView findPrice() {
-//        List<PriceDto> allPrices = priceService.getAllPrices();
-//        return new ModelAndView("cennik", "prices", allPrices);
-//    }
 
 }

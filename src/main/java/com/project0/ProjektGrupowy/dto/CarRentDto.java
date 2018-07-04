@@ -1,7 +1,10 @@
 package com.project0.ProjektGrupowy.dto;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class CarRentDto {
 
     private Long carId;
