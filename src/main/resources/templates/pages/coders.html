@@ -13,46 +13,44 @@
         </div>
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img th:src="@{/images/ninja-1.png}" alt="...">
+                <img th:src="@{/images/ninja-1.png}" alt="Luck Photo">
                 <div class="caption">
                     <a href="https://github.com/ILuckI"><h3>Lukasz</h3></a>
-                    <p style="text-align: center">Full Stack Junior Developer</p>
+                    <p style="text-align: center" th:text="#{coders.coder1.text}"></p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img th:src="@{/images/ninja-3.png}">
+                <img th:src="@{/images/ninja-3.png}" alt="Matt Photo">
                 <div class="caption">
                     <a href="https://github.com/wodzynskimateusz"><h3>Mateusz</h3></a>
-                    <p style="text-align: center">Java & Database Junior Developer</p>
+                    <p style="text-align: center" th:text="#{coders.coder3.text}"></p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img th:src="@{/images/ninja-2.jpg}">
+                <img th:src="@{/images/ninja-2.jpg}" alt="Marzena Photo">
                 <div class="caption">
                     <a href="https://github.com/MaOb89"><h3>Marzena</h3></a>
-                    <p style="text-align: center">Java & Frondend Junior Developer</p>
+                    <p style="text-align: center" th:text="#{coders.coder2.text}"></p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <img th:src="@{/images/ninja-4.png}">
+                <img th:src="@{/images/ninja-4.png}" alt="Tom Photo">
                 <div class="caption">
                     <a href="https://github.com/tomeklukaszewski"><h3>Tomek</h3></a>
-                    <p style="text-align: center">Java & Tester Junior Developer</p>
+                    <p style="text-align: center" th:text="#{coders.coder4.text}"></p>
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
 <div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>

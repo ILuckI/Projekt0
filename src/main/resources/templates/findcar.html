@@ -12,16 +12,16 @@
         <div class="col-sm-12">
             <table class="table table-striped">
                 <tr>
-                    <th>Model</th>
-                    <th> Ilosc miejsc </th>
-                    <th> Ilosc drzwi </th>
-                    <th> Rodzaj paliwa </th>
-                    <th> Spalanie </th>
-                    <th> Pojemnosc silnika </th>
-                    <th> Moc silnika </th>
-                    <th> Pojemnosc bagaznika </th>
-                    <th> Skrzynia biegow </th>
-                    <th> Klimatyzacja </th>
+                    <th th:text="#{search.model.text}"></th>
+                    <th th:text="#{search.seats.text}"></th>
+                    <th th:text="#{search.doors.text}"></th>
+                    <th th:text="#{search.fuel.text}"></th>
+                    <th th:text="#{search.consumption.text}"></th>
+                    <th th:text="#{search.capacity.text}"></th>
+                    <th th:text="#{search.power.text}"></th>
+                    <th th:text="#{search.luggage.text}"></th>
+                    <th th:text="#{search.gearbox.text}"></th>
+                    <th th:text="#{search.aircondition.text}"></th>
                 </tr>
                 <tr th:each="car : ${cars}">
                     <td th:text="${car.carName}"></td>

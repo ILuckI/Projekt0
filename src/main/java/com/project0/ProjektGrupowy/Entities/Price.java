@@ -15,6 +15,8 @@ public class Price {
     @Column(name = "price_Id", nullable = false)
     private Long priceId;
 
+    @Column(name = "name", nullable = false)
+    private String name;
     @Column(name = "car_Class_Id", nullable = false)
     private Long carClassId;
     @Column(name = "day3", nullable = false)
@@ -28,8 +30,9 @@ public class Price {
 
     protected Price(){}
 
-    public Price(Long carClassId, int day3, int day7, int day7more, int deposit) {
+    public Price(Long carClassId, String name, int day3, int day7, int day7more, int deposit) {
         this.carClassId = carClassId;
+        this.name = name;
         this.day3 = day3;
         this.day7 = day7;
         this.day7more = day7more;

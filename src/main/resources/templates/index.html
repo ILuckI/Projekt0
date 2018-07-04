@@ -10,118 +10,7 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="serch">
-                <h3>Rezerwacja Online</h3>
-                <hr>
-                <form method="post">
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="carClass">
-                            Klasa
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <select class="select form-control" id="carClass" name="carClass">
-                            <option value="Klasa a">
-                                Klasa a (np. Fiat Panda)
-                            </option>
-                            <option value="Klasa b">
-                                Klasa b (np. Seat Leon)
-                            </option>
-                            <option value="Klasa c">
-                                Klasa c (np. Peugeot 508)
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="date">
-                            Data wydania
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"
-                               type="date"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="date1">
-                            Data zwrotu
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
-                               type="date"/>
-                    </div>
-                    <hr>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="name">
-                            Imię i Nazwisko
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="name" name="name" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="adress">
-                            Ulica, numer domu
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="adress" name="adress" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="email">
-                            Email
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="email" name="email" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="tel">
-                            Numer telefonu
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="tel" name="tel" type="text"/>
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="personalId">
-                            Numer dowodu
-                            <span class="asteriskField">*</span>
-                        </label>
-                        <input class="form-control" id="personalId" name="personalId" type="text"/>
-                    </div>
-                    <hr>
-                    <div class="form-group ">
-                        <label class="control-label ">
-                            Dodatki
-                        </label>
-                        <div class=" ">
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    <input name="checkbox" type="checkbox" value="Wyjazd za granicę"/>
-                                    Wyjazd za granicę
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    <input name="checkbox" type="checkbox" value="Nawigacja"/>
-                                    Nawigacja
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    <input name="checkbox" type="checkbox" value="Fotelik dziecięcy"/>
-                                    Fotelik dziecięcy
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox">
-                                    <input name="checkbox" type="checkbox" value="Dodatkowy kierowca"/>
-                                    Dodatkowy kierowca
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <button class="btn btn-success " name="submit" type="submit">
-                                Rezerwacja
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <div th:replace="common/booking :: common-booking"/>
             </div>
         </div>
         <div class="col-sm-8">
@@ -131,7 +20,7 @@
             <br/>
             <div class="sale">
                 <div><img th:src="@{/images/bmw318.png}" width="80%" alt="Sale"></div>
-                <h2>Promocja tygodnia: BMW 318GT - 15%</h2><br>
+                <h2 th:text="#{index.sale.text}"></h2><br>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. In tellus integer feugiat scelerisque varius morbi enim. Quis hendrerit
                     dolor magna eget est lorem ipsum dolor. Ornare arcu dui vivamus arcu. Congue quisque egestas diam
@@ -155,7 +44,7 @@
         <div class="col-sm-4">
             <div class="show">
                 <span class="glyphicon glyphicon-euro"></span>
-                <h3>MINIMUM FORMALNOSCI</h3>
+                <h3 th:text="#{index.minimum.text}"></h3>
                 <p>Morbi blandit cursus risus at ultrices mi tempus. Elit ut aliquam purus sit amet luctus. Pretium
                     vulputate sapien nec sagittis. Justo laoreet sit amet cursus sit.</p>
             </div>
@@ -163,15 +52,15 @@
         <div class="col-sm-4">
             <div class="show">
                 <span class="glyphicon glyphicon-heart"></span>
-                <h3>OBSŁUGA 24/7</h3>
-                <p>Accumsan tortor posuere ac ut consequat. Pretium aenean pharetra magna ac placerat. Sed adipiscing
+                <h3 th:text="#{index.service.text}"></h3>
+                <p >Accumsan tortor posuere ac ut consequat. Pretium aenean pharetra magna ac placerat. Sed adipiscing
                     diam donec adipiscing. Mauris a diam maecenas sed. Nisi lacus sed viverra tellus in.</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="show">
                 <span class="glyphicon glyphicon-ok"></span>
-                <h3>SZEROKI WYBÓR</h3>
+                <h3 th:text="#{index.choice.text}"></h3>
                 <p>Interdum posuere lorem ipsum dolor sit amet. Sit amet luctus venenatis lectus magna fringilla urna.
                     Sed ullamcorper morbi tincidunt ornare massa eget egestas. Nulla aliquet porttitor lacus luctus.</p>
             </div>

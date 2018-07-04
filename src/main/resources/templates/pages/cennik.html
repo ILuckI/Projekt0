@@ -10,17 +10,19 @@
     <div class="row">
         <!--Rezultat wyszukiwania-->
 
-        <h4>Ceny podano w złotówkach</h4>
-
+        <h3 th:text="#{prices.top.text}" style="text-align: center"></h3>
+        <br/>
         <div class="col-sm-12">
             <table class="table table-striped">
                 <tr>
-                    <th>Do 3 dni</th>
-                    <th>Do 7 dni</th>
-                    <th>Powyżej 7 dni</th>
-                    <th>Kaucja</th>
+                    <th th:text="#{prices.class.text}"></th>
+                    <th th:text="#{prices.to3.text}"></th>
+                    <th th:text="#{prices.to7.text}"></th>
+                    <th th:text="#{prices.up7.text}"></th>
+                    <th th:text="#{prices.deposit.text}"></th>
                 </tr>
                 <tr th:each="price : ${prices}">
+                    <td th:text="${price.name}"></td>
                     <td th:text="${price.day3}"></td>
                     <td th:text="${price.day7}"></td>
                     <td th:text="${price.day7more}"></td>

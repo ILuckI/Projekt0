@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Created by Luck-->
+<head></head>
+<div th:fragment="common-booking">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 th:text="#{booking.main.text}"></h3>
+            <hr>
+            <form method="post">
+                <div class="form-group ">
+                    <label th:text="#{booking.class.text}" class="control-label requiredField" for="carClass"></label>
+                    <select class="select form-control" id="carClass" name="carClass">
+                        <option th:text="#{booking.optionA.text}" value="class_a"></option>
+                        <option th:text="#{booking.optionB.text}" value="class_b"></option>
+                        <option th:text="#{booking.optionC.text}" value="class_c"></option>
+                        <option th:text="#{booking.optionD.text}" value="class_d"></option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.startRent.text}" class="control-label requiredField" for="date"></label>
+                    <input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"
+                           type="date"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.endRent.text}" class="control-label requiredField" for="date1"></label>
+                    <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
+                           type="date"/>
+                </div>
+                <hr>
+                <div class="form-group ">
+                    <label th:text="#{booking.name.text}" class="control-label requiredField" for="name"></label>
+                    <input class="form-control" id="name" name="name" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.address.text}" class="control-label requiredField" for="adress"></label>
+                    <input class="form-control" id="adress" name="adress" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.email.text}" class="control-label requiredField" for="email"></label>
+                    <input class="form-control" id="email" name="email" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.phone.text}" class="control-label requiredField" for="tel"></label>
+                    <input class="form-control" id="tel" name="tel" type="text"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.id.text}" class="control-label requiredField" for="personalId"></label>
+                    <input class="form-control" id="personalId" name="personalId" type="text"/>
+                </div>
+                <hr>
+                <div class="form-group ">
+                    <label th:text="#{booking.extras.text}" class="control-label "></label>
+                    <div class=" ">
+                        <div class="checkbox">
+                            <label class="checkbox">
+                                <input name="checkbox" type="checkbox" value="Wyjazd za granicę"/>
+                                Wyjazd za granicę
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox">
+                                <input name="checkbox" type="checkbox" value="Nawigacja"/>
+                                Nawigacja
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox">
+                                <input name="checkbox" type="checkbox" value="Fotelik dziecięcy"/>
+                                Fotelik dziecięcy
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox">
+                                <input name="checkbox" type="checkbox" value="Dodatkowy kierowca"/>
+                                Dodatkowy kierowca
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <button th:text="#{booking.bookNow.text}" class="btn btn-success " name="submit" type="submit"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+</html>

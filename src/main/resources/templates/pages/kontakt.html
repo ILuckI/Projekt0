@@ -8,16 +8,16 @@
     <div th:replace="common/navbar :: common-navbar"/>
     <div class="row">
         <div class="col-sm-6">
-            <img th:src="@{/images/bg-kontakt.png}" width="100%" alt="Los Angeles">
+            <img th:src="@{/images/bg-kontakt.png}" width="100%" alt="Contact photo">
             <br/>
             <div class="contact">
                 <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h1 class="gallery-title">CAR RENT 71</h1>
                     <hr>
                     <p>
-                        tel: +48 666 106 106
+                        <span th:text="#{contact.phone.text}"></span>
                         <br/>
-                        email: car.rent71@car.com
+                        <span th:text="#{contact.email.text}"></span>
                         <br/>
                     <div id="footer-social">
                         <hr>
