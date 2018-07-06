@@ -33,6 +33,6 @@ insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) v
 
 
 insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (1, 5, '2018-06-22', '2018-06-29');
--- insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (1, 8, '2018-06-28',);
+insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (2, 8, '2018-06-28', '2018-07-10');
 
 

@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface CarRepository extends CrudRepository<Car, Long> {
     List<Car> findAllByCarNameContaining(String like);
+    Car findByCarName(String name);
 }
