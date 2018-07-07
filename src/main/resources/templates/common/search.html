@@ -8,7 +8,7 @@
         <div class="col-sm-8">
             <h3 th:text="#{search.main.text}"></h3>
             <hr>
-            <form method="post">
+            <form method="get" th:action="@{/searchCar}">
                 <div class="form-group ">
                     <label th:text="#{booking.class.text}" class="control-label requiredField" for="carName"></label>
                     <select class="select form-control" id="carName" name="carName">

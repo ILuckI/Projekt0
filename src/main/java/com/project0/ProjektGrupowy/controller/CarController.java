@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by Luck
@@ -33,29 +34,23 @@ public class CarController {
         return new ModelAndView("findcar", "cars", byNameFragment);
     }
 
-    @PostMapping("/carInaccessible")
-    public String search(@RequestParam("carName") String carName,
+    @GetMapping("/searchCar")
+    public ModelAndView search(@RequestParam("carName") String carName,
                                @RequestParam("date") String date,
                                @RequestParam("date1") String date1, Model model) {
 
-//        String AAA = date.concat(" 00:00:00.00");
-//        String BBB = date1.concat(" 00:00:00.00");
-//
-//        Timestamp dateT = Timestamp.valueOf(AAA);
-//        Timestamp date2T = Timestamp.valueOf(BBB);
-//
-//        if (carRentService.isCarFree(carName, dateT, date2T)) {
-//            return "/pages/carAvailable";
-//        } else {
-//            return "/pages/carInaccessible";
-//        }
-        return "/pages/carInaccessible";
+        String AAA = date.concat(" 00:00:00.00");
+        String BBB = date1.concat(" 00:00:00.00");
+
+        Timestamp dateT = Timestamp.valueOf(AAA);
+        Timestamp date2T = Timestamp.valueOf(BBB);
+
+        if (carRentService.isCarFree(carName, dateT, date2T)) {
+            return new ModelAndView("/pages/carAvailable");
+        } else {
+            return new ModelAndView("/pages/carInaccessible");
+        }
     }
-
-//    @RequestMapping("/find")
-//    public String findCar() {
-//        return "/pages/findcar";
-//    }
-
+    
 }
 
