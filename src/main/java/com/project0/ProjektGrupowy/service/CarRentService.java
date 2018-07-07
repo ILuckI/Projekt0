@@ -1,6 +1,7 @@
 package com.project0.ProjektGrupowy.service;
 
 import com.project0.ProjektGrupowy.Entities.CarRent;
+import com.project0.ProjektGrupowy.dto.CarRentDto;
 import com.project0.ProjektGrupowy.repository.CarRentRepository;
 import com.project0.ProjektGrupowy.repository.CarRepository;
 import org.modelmapper.ModelMapper;
@@ -39,5 +40,10 @@ public class CarRentService {
             }
         }
         return true;
+    }
+
+    public void save(CarRentDto carRentToSave){
+        CarRent entityToSave = modelMapper.map(carRentToSave, CarRent.class);
+        carRentRepository.save(entityToSave);
     }
 }

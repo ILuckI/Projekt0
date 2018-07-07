@@ -3,6 +3,7 @@ package com.project0.ProjektGrupowy.controller;
 import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.service.CarRentService;
 import com.project0.ProjektGrupowy.service.CarService;
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Timestamp;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -45,10 +47,12 @@ public class CarController {
         Timestamp dateT = Timestamp.valueOf(AAA);
         Timestamp date2T = Timestamp.valueOf(BBB);
 
+        List<CarDto> allCars = carService.getAllCars();
+        allCars.sort(Comparator.comparing(CarDto::getCarName));
         if (carRentService.isCarFree(carName, dateT, date2T)) {
-            return new ModelAndView("/pages/carAvailable");
+            return new ModelAndView("/pages/carAvailable","cars",allCars);
         } else {
-            return new ModelAndView("/pages/carInaccessible");
+            return new ModelAndView("/pages/carInaccessible","cars",allCars);
         }
     }
 

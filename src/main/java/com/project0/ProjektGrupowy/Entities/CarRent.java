@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class CarRent {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "car_Rent_Id", nullable = false)
     private Long carRentId;
 

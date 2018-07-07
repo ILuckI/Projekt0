@@ -22,12 +22,12 @@ public class CarService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<CarDto> findByNameFragment(String nameFragment){
+    public List<CarDto> findByNameFragment(String nameFragment) {
         List<Car> allByNameIsLike = carRepository.findAllByCarNameContaining(nameFragment);
-        return allByNameIsLike.stream().map(entity->modelMapper.map(entity, CarDto.class)).collect(Collectors.toList());
+        return allByNameIsLike.stream().map(entity -> modelMapper.map(entity, CarDto.class)).collect(Collectors.toList());
     }
 
-    public List<CarDto> getAllCars(){
+    public List<CarDto> getAllCars() {
         Iterable<Car> cars = carRepository.findAll();
         return StreamSupport.stream(cars.spliterator(), false)
                 .map(car -> modelMapper.map(car, CarDto.class))
