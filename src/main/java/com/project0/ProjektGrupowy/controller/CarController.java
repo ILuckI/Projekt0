@@ -51,6 +51,6 @@ public class CarController {
             return new ModelAndView("/pages/carInaccessible");
         }
     }
-    
+
 }
 
