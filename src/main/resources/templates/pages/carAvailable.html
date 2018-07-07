@@ -7,9 +7,11 @@
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
 
-    <div class="container">
+    <div class="alert alert-success">
         <h3 th:text="#{car.accessible.text}"></h3>
         <hr/>
+    </div>
+    <div class="container">
         <div th:replace="common/booking :: common-booking"/>
     </div>
 </div>
