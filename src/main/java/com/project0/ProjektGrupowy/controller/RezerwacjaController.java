@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,6 +22,7 @@ public class RezerwacjaController {
     @RequestMapping("/rezerwacja")
     public ModelAndView home() {
         List<CarDto> allCars = carService.getAllCars();
+        allCars.sort(Comparator.comparing(CarDto::getCarName));
         return new ModelAndView("pages/rezerwacja", "cars", allCars);
     }
 
