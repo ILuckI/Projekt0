@@ -8,10 +8,10 @@
         <div class="col-sm-8">
             <h3 th:text="#{search.main.text}"></h3>
             <hr>
-            <form method="get" th:action="@{/searchCar}">
+            <form data-toggle="validator" method="post" th:action="@{/searchCar}">
                 <div class="form-group ">
                     <label th:text="#{booking.class.text}" class="control-label requiredField" for="carName"></label>
-                    <select class="select form-control" id="carName" name="carName">
+                    <select class="select form-control" id="carName" name="carName" required>
                         <option th:each="car : ${cars}">
                             <td th:text="${car.carName}" th:value="${car.carName}"></td>
                         </option>
@@ -24,14 +24,16 @@
                 </div>
                 <div class="form-group ">
                     <label th:text="#{booking.endRent.text}" class="control-label requiredField" for="date1"></label>
-                    <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
-                           type="date" required/>
+                    <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu" type="date" required/>
+                </div>
+                <div class="form-group ">
+                    <input type="hidden" class="form-control" id="hidden" name="hidden" value="hidden"/>
                 </div>
                 <hr>
 
                 <div class="form-group">
                     <div>
-                        <button th:text="#{search.searchButton.text}" class="btn btn-success " name="submit" type="submit"></button>
+                        <button th:text="#{search.searchButton.text}" class="btn btn-success " type="submit"></button>
                     </div>
                 </div>
             </form>

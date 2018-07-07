@@ -34,7 +34,7 @@ public class CarController {
         return new ModelAndView("findcar", "cars", byNameFragment);
     }
 
-    @GetMapping("/searchCar")
+    @PostMapping("/searchCar")
     public ModelAndView search(@RequestParam("carName") String carName,
                                @RequestParam("date") String date,
                                @RequestParam("date1") String date1, Model model) {
