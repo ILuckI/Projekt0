@@ -4,6 +4,7 @@ package com.project0.ProjektGrupowy.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -18,14 +19,14 @@ public class CarRent {
     @Column(name = "car_Id", nullable = false)
     private Long carId;
     @Column(name = "rent_Date", nullable = false)
-    private Date rentDate;
+    private Timestamp rentDate;
     @Column(name = "return_Date", nullable = false)
-    private Date returnDate;
+    private Timestamp returnDate;
 
+    protected CarRent() {
+    }
 
-    protected CarRent(){}
-
-    public CarRent(Long carId, Date rentDate, Date returnDate) {
+    public CarRent(Long carId, Timestamp rentDate, Timestamp returnDate) {
         this.carId = carId;
         this.rentDate = rentDate;
         this.returnDate = returnDate;

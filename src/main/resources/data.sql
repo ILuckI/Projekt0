@@ -32,7 +32,7 @@ insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) v
 insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) values (4, 'Miejska',1, 250, 210, 170, 1500);
 
 
-insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (1, 5, '2018-06-22', '2018-06-29');
-insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (2, 8, '2018-06-28', '2018-07-10');
+insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (1, 5, '2018-06-22 00:00:00.00', '2018-06-29 00:00:00.00');
+insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (2, 8, '2018-06-28 00:00:00.00', '2018-07-10 00:00:00.00');
 
 

@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -22,14 +23,15 @@ public class CarRentService {
     @Autowired
     ModelMapper modelMapper;
 
-    public boolean isCarFree(String carName, Date rentDate, Date returnDate) {
+    public boolean isCarFree(String carName, Timestamp rentDate, Timestamp returnDate) {
 
         Long carId = carRepository.findByCarName(carName).getCarId();
         List<CarRent> carsById = carRentRepository.findAllByCarId(carId);
 
         for (int i = 0; i < carsById.size(); i++) {
-            Date startDB = carsById.get(i).getRentDate();
-            Date endDB = carsById.get(i).getReturnDate();
+            Timestamp startDB = carsById.get(i).getRentDate();
+            Timestamp endDB = carsById.get(i).getReturnDate();
+
             if ((startDB.after(rentDate) && endDB.after(returnDate) && startDB.after(returnDate))
                     || (rentDate.after(startDB) && returnDate.after(endDB) && rentDate.after(endDB))) {
             } else {

@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -31,8 +29,6 @@ public class ProjektGrupowyApplicationTests {
 	@Autowired
 	private CarClassService carClassService;
 
-	@Autowired
-	private CarRentService carRentService;
 
 //	Test i18n local message (Poprawnosc komunikatow lokalnych)
 	@Test
@@ -71,32 +67,6 @@ public class ProjektGrupowyApplicationTests {
 	public void testGetAllCarClasses() {
 		List<CarClassDto> allCarClassesList = carClassService.getAllCarClasses();
 		Assert.assertNotNull(allCarClassesList);
-	}
-
-	@Test
-	public void testIsCarFree(){
-		Calendar cal1 = Calendar.getInstance();
-		cal1.set(2018, Calendar.JUNE, 30,0,0);
-		Date rentDate = cal1.getTime();
-
-		Calendar cal2 = Calendar.getInstance();
-		cal2.set(2018, Calendar.JULY, 30,0,0);
-		Date returnDate = cal2.getTime();
-
-		Assert.assertTrue(carRentService.isCarFree("Fiat Panda", rentDate, returnDate));
-	}
-
-	@Test
-	public void testIsCarFree2(){
-		Calendar cal1 = Calendar.getInstance();
-		cal1.set(2018, Calendar.JUNE, 24);
-		Date rentDate = cal1.getTime();
-
-		Calendar cal2 = Calendar.getInstance();
-		cal2.set(2018, Calendar.JUNE, 30);
-		Date returnDate = cal2.getTime();
-
-		Assert.assertFalse(carRentService.isCarFree("Fiat Panda", rentDate, returnDate));
 	}
 
 }
