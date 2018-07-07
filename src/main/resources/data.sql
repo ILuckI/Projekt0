@@ -10,7 +10,7 @@ values(2, 'Toyota Avensis', 4, 5, 4, 'Pb', '6.8l / 100', 1.8, '152 KM', '280 l',
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(3, 'Peugeot 508', 4, 5, 4, 'ON', '6.5l / 100', 2.0, '163 KM', '380 l', 'Automat', 'Tak', 'peugeot508.png');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
-values(4, 'Toyota Auris', 2, 5, 4, 'Pb', '6.8l / 100', 1.6, '130 KM', '250 l', 'Manual', 'Tak', 'yoyotaauris.png');
+values(4, 'Toyota Auris', 2, 5, 4, 'Pb', '6.8l / 100', 1.6, '130 KM', '250 l', 'Manual', 'Tak', 'toyotaauris.png');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(5, 'Fiat Panda', 1, 5, 4, 'Pb', '6.7l / 100', 1.1, '55 KM', '80 l', 'Manual', 'Nie', 'fiatpanda.png');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)

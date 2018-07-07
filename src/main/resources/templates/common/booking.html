@@ -12,10 +12,9 @@
                 <div class="form-group ">
                     <label th:text="#{booking.class.text}" class="control-label requiredField" for="carClass"></label>
                     <select class="select form-control" id="carClass" name="carClass">
-                        <option th:text="#{booking.optionA.text}" value="class_a"></option>
-                        <option th:text="#{booking.optionB.text}" value="class_b"></option>
-                        <option th:text="#{booking.optionC.text}" value="class_c"></option>
-                        <option th:text="#{booking.optionD.text}" value="class_d"></option>
+                        <option th:each="car : ${cars}">
+                            <td th:text="${car.carName}" th:value="${car.carName}"></td>
+                        </option>
                     </select>
                 </div>
                 <div class="form-group ">
