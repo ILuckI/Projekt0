@@ -1,5 +1,6 @@
 package com.project0.ProjektGrupowy;
 
+import com.project0.ProjektGrupowy.controller.CarController;
 import com.project0.ProjektGrupowy.dto.CarClassDto;
 import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.dto.PriceDto;
@@ -9,9 +10,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.lang.Nullable;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,6 +34,9 @@ public class ProjektGrupowyApplicationTests {
 
 	@Autowired
 	private CarClassService carClassService;
+
+	@Autowired
+	private CarController carController;
 
 
 //	Test i18n local message (Poprawnosc komunikatow lokalnych)
@@ -68,5 +77,47 @@ public class ProjektGrupowyApplicationTests {
 		List<CarClassDto> allCarClassesList = carClassService.getAllCarClasses();
 		Assert.assertNotNull(allCarClassesList);
 	}
+
+//	@Test
+//	public void testSearch(){
+//		Model model = new Model() {
+//			@Override
+//			public Model addAttribute(String s, @Nullable Object o) {
+//				return null;
+//			}
+//
+//			@Override
+//			public Model addAttribute(Object o) {
+//				return null;
+//			}
+//
+//			@Override
+//			public Model addAllAttributes(Collection<?> collection) {
+//				return null;
+//			}
+//
+//			@Override
+//			public Model addAllAttributes(Map<String, ?> map) {
+//				return null;
+//			}
+//
+//			@Override
+//			public Model mergeAttributes(Map<String, ?> map) {
+//				return null;
+//			}
+//
+//			@Override
+//			public boolean containsAttribute(String s) {
+//				return false;
+//			}
+//
+//			@Override
+//			public Map<String, Object> asMap() {
+//				return null;
+//			}
+//		};
+//		ModelAndView testowy = carController.search("Fiat Panda", "2018-02-02","2018-05-05", model);
+//		Assert.assertTrue(testowy,"Fiat Panda","2018-02-02","2018-05-05",model);
+//	}
 
 }

@@ -10,8 +10,8 @@
             <hr>
             <form method="post">
                 <div class="form-group ">
-                    <label th:text="#{booking.class.text}" class="control-label requiredField" for="carClass"></label>
-                    <select class="select form-control" id="carClass" name="carClass">
+                    <label th:text="#{booking.class.text}" class="control-label requiredField" for="carName"></label>
+                    <select class="select form-control" id="carName" name="carName">
                         <option th:each="car : ${cars}">
                             <td th:text="${car.carName}" th:value="${car.carName}"></td>
                         </option>
