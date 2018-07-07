@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Created by Luck-->
+<head></head>
+<div th:fragment="common-search">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h3 th:text="#{search.main.text}"></h3>
+            <hr>
+            <form method="post">
+                <div class="form-group ">
+                    <label th:text="#{booking.class.text}" class="control-label requiredField" for="carClass"></label>
+                    <select class="select form-control" id="carClass" name="carClass">
+                        <option th:each="car : ${cars}">
+                            <td th:text="${car.carName}" th:value="${car.carName}"></td>
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.startRent.text}" class="control-label requiredField" for="date"></label>
+                    <input class="form-control" id="date" name="date" placeholder="Wybierz date wydania"
+                           type="date"/>
+                </div>
+                <div class="form-group ">
+                    <label th:text="#{booking.endRent.text}" class="control-label requiredField" for="date1"></label>
+                    <input class="form-control" id="date1" name="date1" placeholder="Wybierz date zwrotu"
+                           type="date"/>
+                </div>
+                <hr>
+
+                <div class="form-group">
+                    <div>
+                        <button th:text="#{search.searchButton.text}" class="btn btn-success " name="submit" type="submit"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+</html>
