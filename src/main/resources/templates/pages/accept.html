@@ -6,7 +6,15 @@
 <body>
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
-    <h3>Gratulacje udało Ci się wypożyczyć samochód</h3>
+    <br>
+    <div>
+        <h3 th:text="#{acceptance.congrats.text}"></h3>
+    </div>
+    <br>
+    <div>
+        <img th:src="@{/images/rent.jpg}" width="50%" height="50%" class="center-block" alt="Rent">
+    </div>
+    <br>
 </div>
 <div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>

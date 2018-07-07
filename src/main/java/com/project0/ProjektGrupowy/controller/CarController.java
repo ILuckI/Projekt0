@@ -49,7 +49,8 @@ public class CarController {
 
         List<CarDto> allCars = carService.getAllCars();
         allCars.sort(Comparator.comparing(CarDto::getCarName));
-        if (carRentService.isCarFree(carName, dateT, date2T)) {
+        if (carRentService.isCarFree(carName, dateT, date2T)
+                && (date2T.after(dateT) || date2T.equals(dateT))) {
             return new ModelAndView("/pages/carAvailable","cars",allCars);
         } else {
             return new ModelAndView("/pages/carInaccessible","cars",allCars);
