@@ -12,6 +12,7 @@
         <div class="col-sm-12">
             <table class="table table-striped">
                 <tr>
+                    <th th:text="#{search.photo.text}"></th>
                     <th th:text="#{search.model.text}"></th>
                     <th th:text="#{search.seats.text}"></th>
                     <th th:text="#{search.doors.text}"></th>
@@ -24,6 +25,7 @@
                     <th th:text="#{search.aircondition.text}"></th>
                 </tr>
                 <tr th:each="car : ${cars}">
+                    <td><img th:href="@{|/images/${car.picture}|}" height="80" width="80"/></td>
                     <td th:text="${car.carName}"></td>
                     <td th:text="${car.peopleNo}"></td>
                     <td th:text="${car.doorNo}"></td>

@@ -18,12 +18,12 @@ public class CarDto {
     private String luggage;
     private String gearbox;
     private String aircondition;
-//    private String picture;
+    private String picture;
 
     public CarDto() {
     }
 
-    public CarDto(String carName, String className, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition) {
+    public CarDto(String carName, String className, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition, String picture) {
         this.carName = carName;
         this.className = className;
         this.peopleNo = peopleNo;
@@ -35,6 +35,7 @@ public class CarDto {
         this.luggage = luggage;
         this.gearbox = gearbox;
         this.aircondition = aircondition;
+        this.picture = picture;
     }
     //a
 }
