@@ -53,8 +53,12 @@ public class RezerwacjaController {
         if (carRentService.isCarFree(carName, startTimestamp, endTimestamp)
                 && (endTimestamp.after(startTimestamp) || endTimestamp.equals(startTimestamp))) {
 
+//            SAVE TO DATABASE
             CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carName),startTimestamp, endTimestamp);
             carRentService.save(carRentDto1);
+
+            
+
             return new ModelAndView("/pages/accept");
         } else {
             List<CarDto> allCars = carService.getAllCars();

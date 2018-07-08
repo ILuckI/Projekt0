@@ -39,6 +39,9 @@ public class ProjektGrupowyApplicationTests {
     @Autowired
     private CarRentService carRentService;
 
+    @Autowired
+    private DateService dateService;
+
 
     //	Test i18n local message (Poprawnosc komunikatow lokalnych)
     @Test
@@ -80,17 +83,19 @@ public class ProjektGrupowyApplicationTests {
     }
 
     @Test
-    public void testFindByNme(){
-        Assert.assertEquals(10L,carService.findCarIdByName("Mercedes Vito"));
+    public void testFindByNme() {
+        Assert.assertEquals(10L, carService.findCarIdByName("Mercedes Vito"));
     }
 
-//    @Test
-//    public void testSave() {
-//        Timestamp t1 = Timestamp.valueOf("2018-08-01 00:00:00.00");
-//        Timestamp t2 = Timestamp.valueOf("2018-08-10 00:00:00.00");
-//        CarRentDto carRentDto = new CarRentDto(5L,t1, t2);
-//        carRentService.save(carRentDto);
-//    }
+    @Test
+    public void testCountDays1() {
+        Assert.assertEquals(8,dateService.countDays("2018-07-08","2018-07-15"));
+    }
+
+    @Test
+    public void testCountDays2() {
+        Assert.assertEquals(1,dateService.countDays("2018-01-20","2018-01-20"));
+    }
 
 
 }
