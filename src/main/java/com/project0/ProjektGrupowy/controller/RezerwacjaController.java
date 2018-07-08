@@ -40,20 +40,20 @@ public class RezerwacjaController {
     }
 
     @PostMapping("/acceptance")
-    public ModelAndView acceptance(@RequestParam("carClass") String carClass,
-                                   @RequestParam("date") String dateAccept,
-                                   @RequestParam("date1") String dateAccept1, Model model) {
+    public ModelAndView acceptance(@RequestParam("carClass") String carName,
+                                   @RequestParam("date") String dateStart,
+                                   @RequestParam("date1") String dateEnd, Model model) {
 
-        String One = dateAccept.concat(" 00:00:00.00");
-        String Two = dateAccept1.concat(" 00:00:00.00");
+        String startString = dateStart.concat(" 00:00:00.00");
+        String endString = dateEnd.concat(" 00:00:00.00");
 
-        Timestamp dateT = Timestamp.valueOf(One);
-        Timestamp date2T = Timestamp.valueOf(Two);
+        Timestamp startTimestamp = Timestamp.valueOf(startString);
+        Timestamp endTimestamp = Timestamp.valueOf(endString);
 
-        if (carRentService.isCarFree(carClass, dateT, date2T)
-                && (date2T.after(dateT) || date2T.equals(dateT))) {
+        if (carRentService.isCarFree(carName, startTimestamp, endTimestamp)
+                && (endTimestamp.after(startTimestamp) || endTimestamp.equals(startTimestamp))) {
 
-            CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carClass),dateT, date2T);
+            CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carName),startTimestamp, endTimestamp);
             carRentService.save(carRentDto1);
             return new ModelAndView("/pages/accept");
         } else {
