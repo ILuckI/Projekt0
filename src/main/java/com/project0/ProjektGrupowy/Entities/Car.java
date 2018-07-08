@@ -15,7 +15,7 @@ public class Car  {
     @Column(name = "car_Name", nullable = false)
     private String carName;
     @Column(name = "car_Class_Id", nullable = false)
-    private String carClassId;
+    private Long carClassId;
     @Column(name = "people_No", nullable = false)
     private int peopleNo;
     @Column(name = "door_No", nullable = false)
@@ -39,8 +39,9 @@ public class Car  {
 
     protected Car(){}
 
-    public Car(String carName, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition, String picture) {
+    public Car(String carName, Long carClassId, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition, String picture) {
         this.carName = carName;
+        this.carClassId = carClassId;
         this.peopleNo = peopleNo;
         this.doorNo = doorNo;
         this.fuel = fuel;

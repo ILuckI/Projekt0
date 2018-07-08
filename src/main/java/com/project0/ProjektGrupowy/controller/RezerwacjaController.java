@@ -57,7 +57,9 @@ public class RezerwacjaController {
             CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carName),startTimestamp, endTimestamp);
             carRentService.save(carRentDto1);
 
-            
+//            COUNT PRICE
+            long carId = carService.findCarIdByName(carName);
+
 
             return new ModelAndView("/pages/accept");
         } else {

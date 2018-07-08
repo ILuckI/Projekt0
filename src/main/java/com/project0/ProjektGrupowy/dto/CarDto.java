@@ -8,7 +8,7 @@ import javax.persistence.Column;
 public class CarDto {
 
     private String carName;
-    private String className;
+    private Long carClassName;
     private int peopleNo;
     private int doorNo;
     private String fuel;
@@ -23,9 +23,9 @@ public class CarDto {
     public CarDto() {
     }
 
-    public CarDto(String carName, String className, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition, String picture) {
+    public CarDto(String carName, Long className, int peopleNo, int doorNo, String fuel, String consumption, double capacity, String power, String luggage, String gearbox, String aircondition, String picture) {
         this.carName = carName;
-        this.className = className;
+        this.carClassName = carClassName;
         this.peopleNo = peopleNo;
         this.doorNo = doorNo;
         this.fuel = fuel;

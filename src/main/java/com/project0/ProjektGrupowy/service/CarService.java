@@ -39,4 +39,9 @@ public class CarService {
         return carIdByName;
     }
 
+    public long findCarClassIdByCarName(String carName){
+        long carClassIdByCarName = carRepository.findByCarName(carName).getCarClassId();
+        return carClassIdByCarName;
+    }
+
 }
