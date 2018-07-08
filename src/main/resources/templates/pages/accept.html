@@ -11,6 +11,21 @@
         <h3 th:text="#{acceptance.congrats.text}"></h3>
     </div>
     <br>
+
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th th:text="#{prices.countDays.text}"></th>
+                <th th:text="#{prices.total.text}"></th>
+                <th th:text="#{prices.deposit.text}"></th>
+            </tr>
+            <tr>
+                <th th:text="${countDays}"></th>
+                <th th:text="${totalPrice}">
+                <th th:text="${deposit}"></th>
+            </tr>
+        </table>
+    </div>
     <div>
         <img th:src="@{/images/rent.jpg}" width="50%" height="50%" class="center-block" alt="Rent">
     </div>

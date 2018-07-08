@@ -6,6 +6,7 @@ import com.project0.ProjektGrupowy.dto.CarRentDto;
 import com.project0.ProjektGrupowy.service.CarRentService;
 import com.project0.ProjektGrupowy.service.CarService;
 import com.project0.ProjektGrupowy.service.DateService;
+import com.project0.ProjektGrupowy.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.sql.Timestamp;
 import java.time.Duration;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,6 +38,9 @@ public class RezerwacjaController {
 
     @Autowired
     private DateService dateService;
+
+    @Autowired
+    private PriceService priceService;
 
     @RequestMapping("/rezerwacja")
     public ModelAndView home() {
@@ -67,11 +73,23 @@ public class RezerwacjaController {
 
             int price = 0;
 
-//            if(countDays <= 3) {
-//                price =
-//            }
+            if(countDays <= 3) {
+                price = priceService.get3DaysPriceByCarClassId(carClassId);
+            } else if (countDays <=7){
+                price = priceService.get7DaysPriceByCarClassId(carClassId);
+            } else {
+                price = priceService.get7DaysMorePriceByCarClassId(carClassId);
+            }
 
-            return new ModelAndView("/pages/accept");
+            int totalPrice = price * countDays;
+            int deposit = priceService.getDepositByCarClassId(carClassId);
+
+            Map<String, Object> modelMap = new HashMap<String, Object>();
+            model.addAttribute("countDays", countDays);
+            model.addAttribute("totalPrice", totalPrice);
+            model.addAttribute("deposit", deposit);
+
+            return new ModelAndView("/pages/accept","model",model);
         } else {
             List<CarDto> allCars = carService.getAllCars();
             allCars.sort(Comparator.comparing(CarDto::getCarName));
