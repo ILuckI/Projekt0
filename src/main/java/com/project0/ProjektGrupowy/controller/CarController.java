@@ -15,7 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Timestamp;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -38,20 +40,28 @@ public class CarController {
 
     @PostMapping("/searchCar")
     public ModelAndView search(@RequestParam("carName") String carName,
-                               @RequestParam("date") String date,
-                               @RequestParam("date1") String date1, Model model) {
+                               @RequestParam("date") String dateStart,
+                               @RequestParam("date1") String dateEnd, Model model) {
 
-        String AAA = date.concat(" 00:00:00.00");
-        String BBB = date1.concat(" 00:00:00.00");
+        String startString = dateStart.concat(" 00:00:00.00");
+        String endString = dateEnd.concat(" 00:00:00.00");
 
-        Timestamp dateT = Timestamp.valueOf(AAA);
-        Timestamp date2T = Timestamp.valueOf(BBB);
+        Timestamp dateStartTimestamp = Timestamp.valueOf(startString);
+        Timestamp dateEndTimestamnp = Timestamp.valueOf(endString);
 
         List<CarDto> allCars = carService.getAllCars();
         allCars.sort(Comparator.comparing(CarDto::getCarName));
-        if (carRentService.isCarFree(carName, dateT, date2T)
-                && (date2T.after(dateT) || date2T.equals(dateT))) {
-            return new ModelAndView("/pages/carAvailable","cars",allCars);
+
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        model.addAttribute("cars",allCars);
+        model.addAttribute("dateStart", dateStart);
+        model.addAttribute("dateEnd", dateEnd);
+        model.addAttribute("carName", carName);
+
+        if (carRentService.isCarFree(carName, dateStartTimestamp, dateEndTimestamnp)
+                && (dateEndTimestamnp.after(dateStartTimestamp)
+                || dateEndTimestamnp.equals(dateStartTimestamp))) {
+            return new ModelAndView("/pages/carAvailable","model",model);
         } else {
             return new ModelAndView("/pages/carInaccessible","cars",allCars);
         }
