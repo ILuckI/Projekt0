@@ -1,24 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+    .mySlides {display:none}
+    .w3-tag, .fa {cursor:pointer}
+    .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
+<body>
+
+
+
+
+<div id="carousel-example-generic2" class="carousel slide">
+    <!-- Wskaźniki w postaci kropek -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Slajdy -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>pierwszego slajdu</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>drugiego slajdu</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="http://placehold.it/1280x500" alt="">
+            <!-- Opis slajdu -->
+            <div class="carousel-caption">
+                <h3>To jest opis</h3>
+                <p>trzeciego slajdu</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Strzałki do przewijania -->
+    <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
+
+
+<!-- Footer -->
 <body>
 <div class="carousel" th:fragment="common-carousel">
     <div class="main-slider">
         <div class="t-slide current-t-slide">
-            <img th:src="@{/images/test1.jpg}" alt=""/>
+            <img th:src="@{/images/kierownica.jpg}" alt=""/>
+            <div class="carousel-caption">
+            <!--<h1>Najlepsze ceny</h1>-->
+            <!--<p>Zapraszamy!</p>-->
+            </div>
         </div>
         <div class="t-slide">
-            <img th:src="@{/images/test2.jpg}" alt=""/>
+            <img th:src="@{/images/zdjecie.jpg}" alt=""/>
         </div>
         <div class="t-slide">
-            <img th:src="@{/images/test3.jpg}" alt=""/>
+            <img th:src="@{/images/2.jpg}" alt=""/>
         </div>
         <div class="t-slide">
-            <img th:src="@{/images/test2.jpg}" alt=""/>
+            <img th:src="@{/images/autarozne.jpg}" alt=""/>
         </div>
         <div class="t-slide">
-            <img th:src="@{/images/test3.jpg}" alt=""/>
+            <img th:src="@{/images/autarozne2.jpg}" alt=""/>
         </div>
+     </div>
+
 
         <div class="t-slider-controls">
             <div class="arrow right-arrow">
@@ -47,4 +121,3 @@
 </div>
 
 </body>
-</html>
