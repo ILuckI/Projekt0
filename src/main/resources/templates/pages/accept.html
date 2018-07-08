@@ -6,35 +6,100 @@
 <body>
 <div class="container">
     <div th:replace="common/navbar :: common-navbar"/>
-    <br>
-    <div>
-        <h3 th:text="#{acceptance.congrats.text}" ></h3>
+
+    <div class="row">
+        <div>
+            <h3 th:text="#{acceptance.congrats.text}"></h3>
+        </div>
     </div>
     <br>
-    <div>
-        <img th:src="@{/images/rent.jpg}" width="20%" height="20%" class="center-block" alt="Rent">
+    <br>
+    <br>
+    <div class="row">
+
+        <div class="col-sm-5">
+            <h4 style="text-align: center" th:text="#{acceptance.summary.text}"></h4>
+            <h6 style="text-align: center" th:text="#{acceptance.summarySUB.text}"></h6>
+            <br>
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                    <th th:text="#{prices.countDays.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${countDays}"></th>
+                    </td>
+                </tr>
+                <tr class="warning">
+                    <td>
+                    <th th:text="#{prices.priceCarRent.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${priceCarRent}"></th>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <th th:text="#{prices.abroad.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${abroad}"></th>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <th th:text="#{prices.navigation.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${navigation}"></th>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <th th:text="#{prices.booster.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${booster}"></th>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <th th:text="#{prices.driver.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${driver}"></th>
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                    <th th:text="#{prices.totalPrice.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${totalPrice}"></th>
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                    <th th:text="#{prices.deposit.text}"></th>
+                    </td>
+                    <td>
+                    <th th:text="${deposit}"></th>
+                    </td>
+                </tr>
+            </table>
+            <h6 style="text-align: left" th:text="#{accessory.accessory.text}"></h6>
+            <br>
+        </div>
+        <div class="col-sm-7">
+            <br>
+            <br>
+            <br>
+            <div>
+                <img th:src="@{/images/rent.jpg}" width="60%" height="60%" class="center-block" alt="Rent">
+            </div>
+        </div>
     </div>
-    <br>
-    <br>
-    <div>
-        <h4 style="text-align: center" th:text="#{acceptance.summary.text}"></h4>
-    </div>
-    <br>
-    <div class="col-sm-12">
-        <table class="table table-striped">
-            <tr>
-                <th th:text="#{prices.countDays.text}"></th>
-                <th th:text="#{prices.total.text}"></th>
-                <th th:text="#{prices.deposit.text}"></th>
-            </tr>
-            <tr>
-                <th th:text="${countDays}"></th>
-                <th th:text="${totalPrice}">
-                <th th:text="${deposit}"></th>
-            </tr>
-        </table>
-    </div>
-    <br>
+</div>
 </div>
 <div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>

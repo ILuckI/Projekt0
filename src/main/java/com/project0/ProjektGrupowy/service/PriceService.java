@@ -30,22 +30,22 @@ public class PriceService {
     }
 
     public int get3DaysPriceByCarClassId(long carClassId){
-        int Days3Price = priceRepository.findById(carClassId).get().getDay3();
+        int Days3Price = priceRepository.findByCarClassId(carClassId).getDay3();
         return Days3Price;
     }
 
     public int get7DaysPriceByCarClassId(long carClassId){
-        int Days7Price = priceRepository.findById(carClassId).get().getDay7();
+        int Days7Price = priceRepository.findByCarClassId(carClassId).getDay7();
         return Days7Price;
     }
 
     public int get7DaysMorePriceByCarClassId(long carClassId){
-        int Days7MorePrice = priceRepository.findById(carClassId).get().getDay7more();
+        int Days7MorePrice = priceRepository.findByCarClassId(carClassId).getDay7more();
         return Days7MorePrice;
     }
 
     public int getDepositByCarClassId(long carClassId){
-        int deposit = priceRepository.findById(carClassId).get().getDeposit();
+        int deposit = priceRepository.findByCarClassId(carClassId).getDeposit();
         return deposit;
     }
 }

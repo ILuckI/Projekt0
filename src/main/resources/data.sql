@@ -3,6 +3,7 @@ insert into car_Class (car_Class_Id, car_Class_Name) values (2, 'Klasa kompaktow
 insert into car_Class (car_Class_Id, car_Class_Name) values (3, 'Klasa rodzinna');
 insert into car_Class (car_Class_Id, car_Class_Name) values (4, 'Klasa luksusowa');
 
+
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(1, 'Seat Leon', 2, 5, 4, 'Pb', '6.8l / 100', 1.4, '125 KM', '350 l', 'Manual', 'Tak', 'seatleon.png');
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
@@ -26,7 +27,7 @@ values(10, 'Mercedes Vito', 3, 9, 4, 'ON', '9.2l / 100', 2.5, '190 KM', '600 l',
 insert into car(car_Id, car_Name, car_Class_Id, people_No, door_No, fuel, consumption, capacity, power, luggage, gearbox, aircondition, picture)
 values(11, 'Peugeot Expert', 3, 9, 4, 'ON', '9.6l / 100', 2.0, '150 KM', '600 l', 'Manual', 'Tak', 'peugeotexpert.png');
 
--- IMPORTANT: car_Class_Id = price_Id
+
 insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) values (4, 'Luksusowa', 4, 450, 420, 400, 3500);
 insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) values (3, 'Rodzinna', 3, 400, 380, 340, 3000);
 insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) values (2, 'Kompaktowa', 2, 300, 260, 220, 2000);
@@ -36,4 +37,7 @@ insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) v
 insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (10000000, 5, '2018-06-22 00:00:00.00', '2018-06-29 00:00:00.00');
 insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date) values (10000001, 8, '2018-06-28 00:00:00.00', '2018-07-10 00:00:00.00');
 
-
+insert into accessory (accessory_Id, name, price) values (1, 'Uzytkowanie poza granica', 20);
+insert into accessory (accessory_Id, name, price) values (2, 'Nawigacja', 10);
+insert into accessory (accessory_Id, name, price) values (3, 'Fotelik dla dziecka', 10);
+insert into accessory (accessory_Id, name, price) values (4, 'Dodatkowy kierowca', 50);

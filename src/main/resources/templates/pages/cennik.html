@@ -8,11 +8,11 @@
     <div th:replace="common/navbar :: common-navbar"/>
 
     <div class="row">
-        <!--Rezultat wyszukiwania-->
-
-        <h3 th:text="#{prices.top.text}" style="text-align: center"></h3>
+        <h3 th:text="#{prices.car.text}" style="text-align: center"></h3>
         <br/>
-        <div class="col-sm-12">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-10">
             <table class="table table-striped">
                 <tr>
                     <th th:text="#{prices.class.text}"></th>
@@ -30,8 +30,36 @@
                 </tr>
             </table>
         </div>
+        <div class="col-sm-1">
+        </div>
     </div>
-
+    <br>
+    <br>
+    <div class="row">
+        <h3 th:text="#{prices.accessory.text}" style="text-align: center"></h3>
+        <br>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+            <table class="table table-striped">
+                <tr>
+                    <th th:text="#{accessory.name.text}"></th>
+                    <th th:text="#{accessory.price.text}"></th>
+                </tr>
+                <tr th:each="accessory : ${accessories}">
+                    <td th:text="${accessory.name}"></td>
+                    <td th:text="${accessory.price}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+    <br>
+    <div>
+        <h6 th:text="#{prices.sub.text}" style="text-align: center"></h6>
+    </div>
+    <br>
 </div>
 <div th:replace="common/footer :: common-footer"/>
 <div th:replace="common/header :: before-body-scripts"/>

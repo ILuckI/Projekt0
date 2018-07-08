@@ -3,10 +3,7 @@ package com.project0.ProjektGrupowy.controller;
 import com.project0.ProjektGrupowy.Entities.Car;
 import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.dto.CarRentDto;
-import com.project0.ProjektGrupowy.service.CarRentService;
-import com.project0.ProjektGrupowy.service.CarService;
-import com.project0.ProjektGrupowy.service.DateService;
-import com.project0.ProjektGrupowy.service.PriceService;
+import com.project0.ProjektGrupowy.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,6 +39,9 @@ public class RezerwacjaController {
     @Autowired
     private PriceService priceService;
 
+    @Autowired
+    private AccessoryService accessoryService;
+
     @RequestMapping("/rezerwacja")
     public ModelAndView home() {
         List<CarDto> allCars = carService.getAllCars();
@@ -52,7 +52,12 @@ public class RezerwacjaController {
     @PostMapping("/acceptance")
     public ModelAndView acceptance(@RequestParam("carClass") String carName,
                                    @RequestParam("date") String dateStart,
-                                   @RequestParam("date1") String dateEnd, Model model) {
+                                   @RequestParam("date1") String dateEnd,
+                                   @RequestParam(value = "abroad", required = false, defaultValue = "No") String abroad,
+                                   @RequestParam(value = "navigation", required = false, defaultValue = "No") String navigation,
+                                   @RequestParam(value = "booster", required = false, defaultValue = "No") String booster,
+                                   @RequestParam(value = "driver", required = false, defaultValue = "No") String driver,
+                                   Model model) {
 
         String startString = dateStart.concat(" 00:00:00.00");
         String endString = dateEnd.concat(" 00:00:00.00");
@@ -64,32 +69,48 @@ public class RezerwacjaController {
                 && (endTimestamp.after(startTimestamp) || endTimestamp.equals(startTimestamp))) {
 
 //            SAVE TO DATABASE
-            CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carName),startTimestamp, endTimestamp);
+            CarRentDto carRentDto1 = new CarRentDto(carService.findCarIdByName(carName), startTimestamp, endTimestamp);
             carRentService.save(carRentDto1);
 
 //            COUNT PRICE
             long carClassId = carService.findCarClassIdByCarName(carName);
-            int countDays = dateService.countDays(dateStart,dateEnd);
+            int countDays = dateService.countDays(dateStart, dateEnd);
 
             int price = 0;
+            int abroadPrice = 0;
+            int boosterPrice = 0;
+            int navigationPrice = 0;
+            int driverPrice = 0;
 
-            if(countDays <= 3) {
+            if (countDays <= 3) {
                 price = priceService.get3DaysPriceByCarClassId(carClassId);
-            } else if (countDays <=7){
+            } else if (countDays <= 7) {
                 price = priceService.get7DaysPriceByCarClassId(carClassId);
             } else {
                 price = priceService.get7DaysMorePriceByCarClassId(carClassId);
             }
 
-            int totalPrice = price * countDays;
+//            CHECKING ACCESSORIES
+            if (abroad.equals("Yes")) abroadPrice = countDays * accessoryService.findPriceByAccessoryName("Uzytkowanie poza granica");
+            if (navigation.equals("Yes")) navigationPrice = countDays * accessoryService.findPriceByAccessoryName("Nawigacja");
+            if (booster.equals("Yes")) boosterPrice = countDays * accessoryService.findPriceByAccessoryName("Fotelik dla dziecka");
+            if (driver.equals("Yes")) driverPrice = countDays * accessoryService.findPriceByAccessoryName("Dodatkowy kierowca");
+
+            int priceCarRent = price * countDays;
+            int totalPrice = priceCarRent + abroadPrice + navigationPrice + boosterPrice + driverPrice;
             int deposit = priceService.getDepositByCarClassId(carClassId);
 
             Map<String, Object> modelMap = new HashMap<String, Object>();
             model.addAttribute("countDays", countDays);
+            model.addAttribute("priceCarRent", priceCarRent);
+            model.addAttribute("abroad", abroadPrice);
+            model.addAttribute("navigation", navigationPrice);
+            model.addAttribute("booster", boosterPrice);
+            model.addAttribute("driver", driverPrice);
             model.addAttribute("totalPrice", totalPrice);
             model.addAttribute("deposit", deposit);
 
-            return new ModelAndView("/pages/accept","model",model);
+            return new ModelAndView("/pages/accept", "model", model);
         } else {
             List<CarDto> allCars = carService.getAllCars();
             allCars.sort(Comparator.comparing(CarDto::getCarName));
