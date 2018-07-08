@@ -5,6 +5,7 @@ import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.dto.CarRentDto;
 import com.project0.ProjektGrupowy.service.CarRentService;
 import com.project0.ProjektGrupowy.service.CarService;
+import com.project0.ProjektGrupowy.service.DateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +33,9 @@ public class RezerwacjaController {
     @Autowired
     private CarRentService carRentService;
 
+    @Autowired
+    private DateService dateService;
+
     @RequestMapping("/rezerwacja")
     public ModelAndView home() {
         List<CarDto> allCars = carService.getAllCars();
@@ -58,8 +62,14 @@ public class RezerwacjaController {
             carRentService.save(carRentDto1);
 
 //            COUNT PRICE
-            long carId = carService.findCarIdByName(carName);
+            long carClassId = carService.findCarClassIdByCarName(carName);
+            int countDays = dateService.countDays(dateStart,dateEnd);
 
+            int price = 0;
+
+//            if(countDays <= 3) {
+//                price =
+//            }
 
             return new ModelAndView("/pages/accept");
         } else {

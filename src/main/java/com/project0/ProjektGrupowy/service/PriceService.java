@@ -28,4 +28,24 @@ public class PriceService {
                 .map(price -> modelMapper.map(price, PriceDto.class))
                 .collect(Collectors.toList());
     }
+
+    public int get3DaysPriceByCarClassId(long carClassId){
+        int Days3Price = priceRepository.findById(carClassId).get().getDay3();
+        return Days3Price;
+    }
+
+    public int get7DaysPriceByCarClassId(long carClassId){
+        int Days7Price = priceRepository.findById(carClassId).get().getDay7();
+        return Days7Price;
+    }
+
+    public int get7DaysMorePriceByCarClassId(long carClassId){
+        int Days7MorePrice = priceRepository.findById(carClassId).get().getDay7more();
+        return Days7MorePrice;
+    }
+
+    public int getDepositByCarClassId(long carClassId){
+        int deposit = priceRepository.findById(carClassId).get().getDeposit();
+        return deposit;
+    }
 }

@@ -97,5 +97,11 @@ public class ProjektGrupowyApplicationTests {
         Assert.assertEquals(1,dateService.countDays("2018-01-20","2018-01-20"));
     }
 
+    @Test
+    public void testGet3DaysPrice() {
+    Assert.assertEquals(450, priceService.get3DaysPriceByCarClassId(4)); }
 
+    @Test
+    public void testGetDeposit() {
+        Assert.assertEquals(1500, priceService.getDepositByCarClassId(1)); }
 }
