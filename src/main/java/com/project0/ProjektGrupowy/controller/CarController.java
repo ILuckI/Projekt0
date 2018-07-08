@@ -53,7 +53,6 @@ public class CarController {
         allCars.sort(Comparator.comparing(CarDto::getCarName));
 
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        model.addAttribute("cars",allCars);
         model.addAttribute("dateStart", dateStart);
         model.addAttribute("dateEnd", dateEnd);
         model.addAttribute("carName", carName);

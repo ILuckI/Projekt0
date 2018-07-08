@@ -34,4 +34,9 @@ public class CarService {
                 .collect(Collectors.toList());
     }
 
+    public long findCarIdByName(String carName) {
+        long carIdByName = carRepository.findByCarName(carName).getCarId();
+        return carIdByName;
+    }
+
 }

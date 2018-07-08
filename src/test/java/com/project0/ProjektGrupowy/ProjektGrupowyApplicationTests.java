@@ -79,6 +79,11 @@ public class ProjektGrupowyApplicationTests {
         Assert.assertNotNull(allCarClassesList);
     }
 
+    @Test
+    public void testFindByNme(){
+        Assert.assertEquals(10L,carService.findCarIdByName("Mercedes Vito"));
+    }
+
 //    @Test
 //    public void testSave() {
 //        Timestamp t1 = Timestamp.valueOf("2018-08-01 00:00:00.00");

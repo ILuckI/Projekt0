@@ -1,5 +1,6 @@
 package com.project0.ProjektGrupowy.controller;
 
+import com.project0.ProjektGrupowy.Entities.Car;
 import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.dto.CarRentDto;
 import com.project0.ProjektGrupowy.service.CarRentService;
@@ -51,8 +52,9 @@ public class RezerwacjaController {
 
         if (carRentService.isCarFree(carClass, dateT, date2T)
                 && (date2T.after(dateT) || date2T.equals(dateT))) {
-//            CarRentDto carRentDto = new CarRentDto(4L,dateT, date2T);
-//            carRentService.save(carRentDto);
+
+            CarRentDto carRentDto1 = new CarRentDto( carService.findCarIdByName(carClass),dateT, date2T);
+            carRentService.save(carRentDto1);
             return new ModelAndView("/pages/accept");
         } else {
             List<CarDto> allCars = carService.getAllCars();
