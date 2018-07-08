@@ -15,12 +15,12 @@ $(document).ready(function() {
         function setTextSlideHeight()  {
             if ($(sliderName).hasClass('text-slider')) {
                 if ($(window).width() >= 768 ) {
-                    $(''+ sliderName +'.text-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 245);
+                    $(''+ sliderName +'.text-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 150);
                     if ($(''+ sliderName +'.text-slider').hasClass('small-slider')) {
-                        $(''+ sliderName +'.text-slider.small-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 100);
+                        $(''+ sliderName +'.text-slider.small-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 150);
                     }
                 } else {
-                    $(''+ sliderName +'.text-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 70);
+                    $(''+ sliderName +'.text-slider').css('height', $(''+ sliderName +' .current-t-slide .t-slide-content').height() + 150);
                 }
             }
         }
