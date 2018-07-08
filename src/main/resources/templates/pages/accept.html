@@ -9,10 +9,17 @@
     <br>
     <div>
         <h3 th:text="#{acceptance.congrats.text}" ></h3>
-        <br>
-        <h4 style="text-align: center" th:text="#{acceptance.summary.text}"></h4>
-        <br>
     </div>
+    <br>
+    <div>
+        <img th:src="@{/images/rent.jpg}" width="20%" height="20%" class="center-block" alt="Rent">
+    </div>
+    <br>
+    <br>
+    <div>
+        <h4 style="text-align: center" th:text="#{acceptance.summary.text}"></h4>
+    </div>
+    <br>
     <div class="col-sm-12">
         <table class="table table-striped">
             <tr>
@@ -26,10 +33,6 @@
                 <th th:text="${deposit}"></th>
             </tr>
         </table>
-    </div>
-    <br>
-    <div>
-        <img th:src="@{/images/rent.jpg}" width="40%" height="40%" class="center-block" alt="Rent">
     </div>
     <br>
 </div>
