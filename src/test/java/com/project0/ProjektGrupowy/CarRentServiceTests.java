@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CarRentTests {
+public class CarRentServiceTests {
 
     @Autowired
     private CarRentService carRentService;
