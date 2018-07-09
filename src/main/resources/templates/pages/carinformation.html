@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--Created by Luck-->
+<head th:replace="common/header :: common-header"/>
+
+<body>
+<div class="container">
+    <div th:replace="common/navbar :: common-navbar"/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="serch">
+                    <div th:replace="common/search :: common-search"/>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <br>
+                <div class="text-center">
+                    <img th:src="@{|/images/${car.picture}|}" height="70%" width="70%"/>
+                </div>
+                <br>
+                <h3 th:text="${car.carName}" style="text-align: center"></h3>
+                <h5 th:text="${carClassName}" style="text-align: center"></h5>
+                <br>
+                <div>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>
+                            <th th:text="#{search.seats.text}"></th>
+                            </td>
+                            <td th:text="${car.peopleNo}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.doors.text}"></th>
+                            </td>
+                            <td th:text="${car.doorNo}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.fuel.text}"></th>
+                            </td>
+                            <td th:text="${car.fuel}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.consumption.text}"></th>
+                            </td>
+                            <td th:text="${car.consumption}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.capacity.text}"></th>
+                            </td>
+                            <td th:text="${car.capacity}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.power.text}"></th>
+                            </td>
+                            <td th:text="${car.power}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.luggage.text}"></th>
+                            </td>
+                            <td th:text="${car.luggage}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.gearbox.text}"></th>
+                            </td>
+                            <td th:text="${car.gearbox}"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <th th:text="#{search.aircondition.text}"></th>
+                            </td>
+                            <td th:text="${car.aircondition}"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div th:replace="common/footer :: common-footer"/>
+    <div th:replace="common/header :: before-body-scripts"/>
+</body>
+</html>

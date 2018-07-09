@@ -35,6 +35,9 @@ public class CarServiceTests {
         Assert.assertEquals(10L, carService.findCarIdByName("Mercedes Vito"));
     }
 
-
+@Test
+    public void testFindClassNameByCarName(){
+        Assert.assertEquals("Klasa luksusowa", carService.findClassNameByCarName("BMW 318 GT"));
+}
 
 }

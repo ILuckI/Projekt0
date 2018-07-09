@@ -2,6 +2,7 @@ package com.project0.ProjektGrupowy.service;
 
 import com.project0.ProjektGrupowy.Entities.Car;
 import com.project0.ProjektGrupowy.dto.CarDto;
+import com.project0.ProjektGrupowy.repository.CarClassRepository;
 import com.project0.ProjektGrupowy.repository.CarRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class CarService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    CarClassRepository carClassRepository;
 
     public List<CarDto> findByNameFragment(String nameFragment) {
         List<Car> allByNameIsLike = carRepository.findAllByCarNameContaining(nameFragment);
@@ -42,6 +46,17 @@ public class CarService {
     public long findCarClassIdByCarName(String carName){
         long carClassIdByCarName = carRepository.findByCarName(carName).getCarClassId();
         return carClassIdByCarName;
+    }
+
+    public CarDto findCarByName(String carName){
+       Car carByName = carRepository.findByCarName(carName);
+       return modelMapper.map(carByName,CarDto.class);
+    }
+
+    public String findClassNameByCarName(String carName){
+        long classId = carRepository.findByCarName(carName).getCarClassId();
+        String carClassName = carClassRepository.findCarClassByCarClassId(classId).getCarClassName();
+        return carClassName;
     }
 
 }
