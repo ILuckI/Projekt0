@@ -24,7 +24,7 @@ public class CarService {
     private ModelMapper modelMapper;
 
     @Autowired
-    CarClassRepository carClassRepository;
+    private CarClassRepository carClassRepository;
 
     public List<CarDto> findByNameFragment(String nameFragment) {
         List<Car> allByNameIsLike = carRepository.findAllByCarNameContaining(nameFragment);

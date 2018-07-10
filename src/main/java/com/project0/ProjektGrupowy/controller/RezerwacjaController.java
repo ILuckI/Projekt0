@@ -3,6 +3,7 @@ package com.project0.ProjektGrupowy.controller;
 import com.project0.ProjektGrupowy.Entities.Car;
 import com.project0.ProjektGrupowy.dto.CarDto;
 import com.project0.ProjektGrupowy.dto.CarRentDto;
+import com.project0.ProjektGrupowy.dto.ClientDto;
 import com.project0.ProjektGrupowy.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,9 @@ public class RezerwacjaController {
     private PriceService priceService;
 
     @Autowired
+    private ClientService clientService;
+
+    @Autowired
     private AccessoryService accessoryService;
 
     @RequestMapping("/rezerwacja")
@@ -53,10 +57,17 @@ public class RezerwacjaController {
     public ModelAndView acceptance(@RequestParam("carClass") String carName,
                                    @RequestParam("date") String dateStart,
                                    @RequestParam("date1") String dateEnd,
+                                   @RequestParam("name") String name,
+                                   @RequestParam("address") String address,
+                                   @RequestParam("email") String email,
+                                   @RequestParam("phone") String phone,
+                                   @RequestParam("dowod") String dowod,
                                    @RequestParam(value = "abroad", required = false, defaultValue = "No") String abroad,
                                    @RequestParam(value = "navigation", required = false, defaultValue = "No") String navigation,
                                    @RequestParam(value = "booster", required = false, defaultValue = "No") String booster,
                                    @RequestParam(value = "driver", required = false, defaultValue = "No") String driver,
+                                   @RequestParam(value = "acceptMail", required = false, defaultValue = "No") String acceptMail,
+                                   @RequestParam(value = "acceptSMS", required = false, defaultValue = "No") String acceptSMS,
                                    Model model) {
 
         String startString = dateStart.concat(" 00:00:00.00");
@@ -69,10 +80,17 @@ public class RezerwacjaController {
                 && (endTimestamp.after(startTimestamp) || endTimestamp.equals(startTimestamp))) {
 
 //            SAVE TO DATABASE
-            CarRentDto carRentDto1 = new CarRentDto(carService.findCarIdByName(carName), startTimestamp, endTimestamp);
+            if (clientService.findClientByAllData(name, address, email, phone, dowod) == null) {
+                ClientDto clientDto1 = new ClientDto(name,address,email,phone,dowod, acceptMail, acceptSMS);
+                clientService.save(clientDto1);
+            }
+
+            long clientId = clientService.findClientIdByAllData(name, address, email, phone, dowod);
+
+            CarRentDto carRentDto1 = new CarRentDto(carService.findCarIdByName(carName), startTimestamp, endTimestamp, clientId, abroad,navigation,booster,driver);
             carRentService.save(carRentDto1);
 
-//            COUNT PRICE
+//            COUNTING PRICE
             long carClassId = carService.findCarClassIdByCarName(carName);
             int countDays = dateService.countDays(dateStart, dateEnd);
 
@@ -91,10 +109,14 @@ public class RezerwacjaController {
             }
 
 //            CHECKING ACCESSORIES
-            if (abroad.equals("Yes")) abroadPrice = countDays * accessoryService.findPriceByAccessoryName("Uzytkowanie poza granica");
-            if (navigation.equals("Yes")) navigationPrice = countDays * accessoryService.findPriceByAccessoryName("Nawigacja");
-            if (booster.equals("Yes")) boosterPrice = countDays * accessoryService.findPriceByAccessoryName("Fotelik dla dziecka");
-            if (driver.equals("Yes")) driverPrice = countDays * accessoryService.findPriceByAccessoryName("Dodatkowy kierowca");
+            if (abroad.equals("Yes"))
+                abroadPrice = countDays * accessoryService.findPriceByAccessoryName("Uzytkowanie poza granica");
+            if (navigation.equals("Yes"))
+                navigationPrice = countDays * accessoryService.findPriceByAccessoryName("Nawigacja");
+            if (booster.equals("Yes"))
+                boosterPrice = countDays * accessoryService.findPriceByAccessoryName("Fotelik dla dziecka");
+            if (driver.equals("Yes"))
+                driverPrice = countDays * accessoryService.findPriceByAccessoryName("Dodatkowy kierowca");
 
             int priceCarRent = price * countDays;
             int totalPrice = priceCarRent + abroadPrice + navigationPrice + boosterPrice + driverPrice;
