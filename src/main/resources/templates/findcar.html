@@ -25,7 +25,10 @@
                     <th th:text="#{search.aircondition.text}"></th>
                 </tr>
                 <tr th:each="car : ${cars}">
-                    <td><img th:src="@{|/images/${car.picture}|}" height="40" width="80"/></td>
+                    <td> <form action="carinfo" method="GET">
+                        <input type="hidden" name="carName" th:value="${car.carName}">
+                        <input type="image" th:src="@{|/images/${car.picture}|}" th:width="80" th:height="40">
+                    </form></td>
                     <td th:text="${car.carName}"></td>
                     <td th:text="${car.peopleNo}"></td>
                     <td th:text="${car.doorNo}"></td>
