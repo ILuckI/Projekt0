@@ -7,6 +7,7 @@ public class DateService {
 
     public int countDays(String startDate, String endDate) {
 
+//        Zamiana Stringa na wartości liczbowe z podziałem na dni, miesiące i lata
         int startYear = Integer.parseInt(startDate.substring(0,4));
         int startMonth = Integer.parseInt(startDate.substring(5, 7));
         int startDay = Integer.parseInt(startDate.substring(8,10));
@@ -17,13 +18,16 @@ public class DateService {
 
         int days = 1;
 
+//        Sprawdzenie pełnych lat między dwoma datami
         for (int year = startYear + 1; year < endYear; year++) {
             days += isLeap(year) ? 366 : 365;
         }
 
+//        Tablica z liczbą dni w danym miesiącu
         int monthsLengthness[] = {0, 31, 28, 31, 30, 31, 30, 31,
                 31, 30, 31, 30, 31};
 
+//        Wyznaczenie liczby dni między dwoma datami
         if (startYear == endYear) {
             if (startMonth == endMonth) {
                 days += endDay - startDay;
@@ -54,9 +58,11 @@ public class DateService {
             days += endDay;
         }
 
+//        Przekazanie ostatecznego wyniku
         return days;
     }
 
+//    Metoda sprawdzająca czy wybrany rok jest rokiem przestępnym
     private boolean isLeap(int year) {
         return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
     }

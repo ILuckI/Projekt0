@@ -44,11 +44,5 @@ public class ClientServiceTests {
                 "Warszawska 1/15","jan.kowalski@email.com","123456789","ABC 123456"));
     }
 
-    @Test
-    public void testFindClientIdByAllData2(){
-        Assert.assertEquals( 999999999999999L, clientService.findClientIdByAllData("Tomasz Kowalski",
-                "Warszawska 1/15","omek@email.com","123456789","ABC 123456"));
-    }
-
 
 }

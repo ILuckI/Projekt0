@@ -34,7 +34,7 @@ insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) v
 insert into Price(price_Id, name, car_Class_Id, day3, day7, day7more, deposit) values (1, 'Miejska',1, 250, 210, 170, 1500);
 
 
-insert into accessory (accessory_Id, name, price) values (1, 'Uzytkowanie poza granica', 20);
+insert into accessory (accessory_Id, name, price) values (1, 'Użytkowanie poza granicą', 20);
 insert into accessory (accessory_Id, name, price) values (2, 'Nawigacja', 10);
 insert into accessory (accessory_Id, name, price) values (3, 'Fotelik dla dziecka', 10);
 insert into accessory (accessory_Id, name, price) values (4, 'Dodatkowy kierowca', 50);
@@ -45,6 +45,6 @@ insert into client (client_Id, name, address, email, phone, dowod, accept_Mail, 
 values (10000001,'Anna Nowak','Wielka 20','anna@email.com','999555111','ABC 445566', 'No', 'No');
 
 insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date, client_Id, abroad, navigation, booster, driver)
-values (10000000, 5, '2018-06-22 00:00:00.00', '2018-06-29 00:00:00.00', 10000000, 'No','No','No','No');
+values (10000000, 5, '2018-06-01 00:00:00.00', '2018-06-30 00:00:00.00', 10000000, 'No','No','No','No');
 insert into car_Rent (car_Rent_Id, car_Id, rent_Date, return_Date, client_Id,abroad, navigation, booster, driver)
-values (10000001, 8, '2018-06-28 00:00:00.00', '2018-07-10 00:00:00.00', 10000001, 'Yes', 'Yes', 'Yes', 'Yes');
+values (10000001, 8, '2018-06-01 00:00:00.00', '2018-06-30 00:00:00.00', 10000001, 'Yes', 'Yes', 'Yes', 'Yes');

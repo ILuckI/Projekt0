@@ -37,26 +37,30 @@ public class CarController {
         List<CarDto> byNameFragment = carService.findByNameFragment(nameFragment);
         return new ModelAndView("findcar", "cars", byNameFragment);
     }
-
+//        Metoda przyjmuje trzy parametry
     @PostMapping("/searchCar")
     public ModelAndView search(@RequestParam("carName") String carName,
                                @RequestParam("date") String dateStart,
                                @RequestParam("date1") String dateEnd, Model model) {
 
+//        Na podstawie uzyskanych parametrów tworzy obiekty Timestamp
         String startString = dateStart.concat(" 00:00:00.00");
         String endString = dateEnd.concat(" 00:00:00.00");
 
         Timestamp dateStartTimestamp = Timestamp.valueOf(startString);
         Timestamp dateEndTimestamnp = Timestamp.valueOf(endString);
 
+//        Lista wszystkich dostępnych samochodów przekazywana póżniej do dropdownów w wyszukiwarce
         List<CarDto> allCars = carService.getAllCars();
         allCars.sort(Comparator.comparing(CarDto::getCarName));
 
+//        Przekazanie atrybutow do modelu
         Map<String, Object> modelMap = new HashMap<String, Object>();
         model.addAttribute("dateStart", dateStart);
         model.addAttribute("dateEnd", dateEnd);
         model.addAttribute("carName", carName);
 
+//        Sprawdzenie dostępności wybranego samochodu, przekierowanie do odpowieniego widoku wraz z atrybutami
         if (carRentService.isCarFree(carName, dateStartTimestamp, dateEndTimestamnp)
                 && (dateEndTimestamnp.after(dateStartTimestamp)
                 || dateEndTimestamnp.equals(dateStartTimestamp))) {

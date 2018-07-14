@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <!--Created by Luck-->
 <head></head>
 <div th:fragment="common-booking">
@@ -80,19 +80,19 @@
                         <div class="checkbox">
                             <label class="checkbox">
                                 <input name="checkbox" type="checkbox" value="Akceptuje regulamin" required/>
-                                Akceptuje regulaminu
+                                <span th:text="#{booking.acceptReg.text}"></span>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label class="checkbox">
                                 <input name="acceptMail" type="checkbox" value="Yes"/>
-                                Wyrazam zgode na przesylanie materialow marketingowych droga mailowa
+                                <span th:text="#{booking.emailAccept.text}"></span>
                             </label>
                         </div>
                         <div class="checkbox">
                             <label class="checkbox">
                                 <input name="acceptSMS" type="checkbox" value="Yes"/>
-                                Wyrazam zgode na przesylanie materialow marketingowych poprzez SMS
+                                <span th:text="#{booking.SMS.text}"></span>
                             </label>
                         </div>
                     </div>
